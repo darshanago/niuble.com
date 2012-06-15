@@ -1,0 +1,22 @@
+#postArea{
+    width: 400px;
+    margin: 0 auto;
+}
+#postArea ul#typeSelector{
+    font-size: 16px;
+}
+#postArea ul#typeSelector li{
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#postArea ul#typeSelector li.active p{
+}
+#postArea #send_message{
+    width: 398px;
+    border: 3px solid #666;
+    padding: 3px 5px;
+}
+#postArea #submit_post{
+    float: right;
+}

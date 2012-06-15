@@ -1,0 +1,42 @@
+<?php /* Smarty version Smarty-3.1.6, created on 2011-12-19 07:55:06
+         compiled from "/Users/ericdum/Sites/work/sixue365/1/templates/contents/register_includes/step3.php" */ ?>
+<?php /*%%SmartyHeaderCode:14058385024eee7d5ad46b17-05439377%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'e9996c55c890da602c6105f7fb8f66bb1dfac54c' => 
+    array (
+      0 => '/Users/ericdum/Sites/work/sixue365/1/templates/contents/register_includes/step3.php',
+      1 => 1323963541,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '14058385024eee7d5ad46b17-05439377',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.6',
+  'unifunc' => 'content_4eee7d5ad6957',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_4eee7d5ad6957')) {function content_4eee7d5ad6957($_smarty_tpl) {?><div class="title clearfix">
+    <div class="textStudentSuccess"></div>
+</div>
+<div class="tips">
+    <div class="interator"></div>
+    <ul>
+        <li>
+            1小时内会有我们专门为您安排的客户经理通过电话联系到您。
+        </li>
+        <li>
+            或者您可以拨打400-8000 000快速联系到您的专属客户经理
+        </li>
+        <li>
+            您的会员编号为您的联系手机号
+        </li>
+        <li>
+            会员功能将在您缴纳对对应级别的会员管理费以后激活
+        </li>
+    </ul>
+</div>
+<?php }} ?>

@@ -1,0 +1,10 @@
+nav:cbcbd2
+nav_active: 75b6bc
+
+layout:
+border-top: 1px solid #ffffff
+border-bottom: 1px solid #b5b5bc
+
+home_module
+general: #e7e7ee
+active:  #f5f5f8

@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteBase /
+
+<Files .*>
+    Order Deny,Allow
+    Deny From All
+</Files>
+
+RewriteCond $1 !^(index\.php|js|css|images|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]

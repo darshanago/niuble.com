@@ -1,0 +1,13 @@
+{
+    "name": "Sites Check List",
+    "version": "1.0",
+    "nanifest_version": 2,
+    "description": "啦啦啦各个站点的check list",
+    "browser_action": {
+        "popup": "popup.html",
+        "default_icon": "icon.gif"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}

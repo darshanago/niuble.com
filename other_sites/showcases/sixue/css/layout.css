@@ -1,0 +1,1650 @@
+#MainWrapperHeader{
+    background: url('../images/header.png') top center no-repeat;
+}
+#MainWrapper{
+    background: url('../images/footer.png') bottom center no-repeat;
+}
+#header{
+    height: 123px;
+}
+
+#logo{
+    margin: 10px 20px 0px 20px;
+}
+
+#slogan{
+    margin-top: 80px;
+}
+
+.contact400{
+    margin-top: 95px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.centerLayout{
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.mainMarquee{
+    float: left;
+    width: 960px;
+    margin-left: 5px;
+    height: 400px;
+    overflow: hidden;
+    margin-top:-7px;
+    margin-bottom:-2px;
+}
+
+.mainMarquee .slider{
+    height: 9999px;
+    width: 950px;
+}
+.mainMarquee .slider .item{
+    width: 950px;
+    height: 400px;
+}
+.glassBodyTop{
+    width: 960px;
+    height: 9px;
+    background: url('../images/body_top.png') no-repeat;
+}
+.glassBodyBottom{
+    width: 960px;
+    height: 9px;
+    background: url('../images/body_bottom.png') no-repeat;
+}
+.glassBody{
+    width: 960px;
+    background: url('../images/body.png') repeat-y;
+}
+
+.marqueeSwitcher{
+    float: right;
+    z-index: 10;
+    margin-right: -20px;
+    margin-top: 290px;
+}
+.marqueeSwitcher li{
+    margin-top: 10px;
+}
+.marqueeSwitcher a{
+    width: 15px;
+    height: 14px;
+    display: block;
+    overflow: hidden;
+    text-indent: 1000px;
+    background: url('../images/additions.png') 0px -15px;
+}
+.marqueeSwitcher a.active{
+    background-position: 0px 0px;
+}
+
+.leftDirection{
+    float: left;
+    margin-top: 30px;
+    width: 220px;
+    margin-right: -220px;
+    z-index: 10;
+}
+
+.clampButton div{
+    position: relative;
+    width: 245px;
+    height: 65px;
+    line-height: 56px;
+    padding-left: 25px;
+    margin-left: -15px;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: url('../images/buttons.png') no-repeat;
+    z-index: 10;
+}
+.clampButton{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.serviceNav{
+    height: 38px;
+    margin-top: -32px;
+    margin-left: 220px;
+    line-height: 28px;
+}
+
+.serviceNav li{
+    float: left;
+    width: 144px;
+    height: 38px;
+    margin-right: 10px;
+    padding-left: 10px;
+    color: #fff;
+    background: url('../images/buttons.png') 0px -94px no-repeat;
+    cursor: pointer;
+}
+.serviceNav li a{
+    color: #fff;
+}
+.serviceNav li.active{
+    background: url('../images/buttons.png') -144px -94px no-repeat;
+}
+
+.serviceInfo{
+    margin-left: 220px;
+}
+
+.serviceInfo .leftImage{
+    position: relative;
+    float: left;
+    margin-top: -65px;
+    margin-left: -220px;
+    width: 210px;
+    height: 260px;
+    background: url('../images/tool1.png') no-repeat;
+}
+
+.serviceInfo h1.serviceTitle{
+    margin-top: 30px;
+    line-height: 130%;
+    font-size: 26px;
+}
+.serviceMore{
+    margin-top: 20px;
+    width: 125px;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    background: url('../images/buttons.png') 1px -160px no-repeat;
+}
+.serviceMore a{
+    line-height: 35px;
+    height: 35px;
+    padding: 9px 30px;
+    text-decoration: none;
+}
+
+.serviceInfo .tabItem{
+    display: none;
+}
+.serviceInfo .active.tabItem{
+    display: block;
+}
+
+#footer{
+    margin: 20px 0;
+    border-top: 2px solid #000;
+    padding-top: 3px;
+    color: #999;
+}
+
+/* 首页最上面的用户控制面板 */
+.topUserControll{
+    position: relative;
+    margin-top: -118px;
+    margin-bottom: -30px;
+    z-index: 9999;
+}
+.topUserControll input{
+    background-color: #ffffff;
+}
+.topUserControll .ucWrapper{
+    background: #78ad25;
+    height: 128px;
+    padding-top: 18px;
+    color: #fff;
+}
+.topUserControll .ucWrapper a{
+    color: #fff;
+    text-decoration: none;
+}
+.topUserControll .ucWrapper .ucLogo{
+    margin-left: 35px;
+}
+.topUserControll .ucWrapper .ucPanel{
+    margin-left: 140px;
+}
+.topUserControll .ucWrapper .ucPanel ul li{
+    position: relative;
+    float: left;
+    margin-right: 15px;
+}
+.topUserControll .ucWrapper .ucPanel ul li p{
+    margin-top: 10px;
+}
+.topUserControll .ucWrapper .ucPanel ul li .textInput{
+    width: 278px;
+    height: 28px;
+    padding: 0 5px;
+    margin: 0;
+    color: #666;
+    border: 1px solid #111;
+}
+.topUserControll .ucWrapper .ucPanel ul li .placeHolder{
+    position: absolute;
+    color: #666;
+    height: 28px;
+    line-height: 28px;
+    top: 1px;
+    left: 7px;
+    white-space: nowrap;
+    display: block;
+    cursor: text;
+    z-index: 10;
+}
+.topUserControll .ucWrapper .ucPanel ul li .greenButton{
+    height: 42px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 6px 10px;
+}
+.topUserControll .ucLabel ul li{
+    background: #eee;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+.topUserControll .ucLabel ul li a{
+    line-height: 30px;
+}
+.topUserControll .ucLabel ul li.switcher{
+    background: #78ad25;
+    display: none;
+}
+.topUserControll .ucLabel ul li.switcher.active{
+    display: block;
+}
+.topUserControll .ucLabel ul li.switcher a{
+    background: #78ad25;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+/**
+ *
+ * Navigation Bar
+ *
+ */
+.navigationBar{
+    padding: 2px;
+    height: 36px;
+    line-height: 32px;
+    background-color: #78ad25;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.navigationBar span, .navMessage a{
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    font-size: 13px;
+}
+.navMessage{
+    margin: 2px 10px 2px 50px;
+}
+#navigationBack{
+    position: relative;
+}
+#navigationBack .navigationBar{
+    padding-left: 30px;
+}
+#navigationBack .navigationBar li{
+    position: relative;
+    float:left;
+    width: 132px;
+    padding-top: 2px;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    background: url('../images/additions.png') no-repeat -39px -90px;
+}
+#navigationBack .navigationBar li a{
+    color: #ffffff;
+    text-align: center;
+}
+#navigationBack .navigationBar li.first{
+    background: none;
+}
+#navigationBack .navigationBar li .notice{
+    float: left;
+    position: absolute;
+    top: 3px;
+    left: 103px;
+    color: #ff7800;
+    width: 23px;
+    height: 19px;
+    line-height: 15px;
+    text-align: center;
+    background: url('../images/additions.png') no-repeat 0 -208px;
+}
+/**
+ * register Page
+ */
+.registerContainer .registerLayout{
+    padding:5px 22px;
+}
+.registerPrimaryNav{
+    padding: 20px 50px 10px 50px;
+}
+.registerPrimaryNav .studentBanner{
+    float: left;
+    width: 440px;
+    height: 36px;
+    background: url('../images/texts.png') -5px -135px;
+}
+.registerPrimaryNav .controller{
+    float: right;
+}
+.registerPrimaryNav .controller li{
+    float: left;
+    width: 25px;
+    height: 24px;
+    margin-right: 55px;
+    overflow: hidden;
+    text-indent: 1000px;
+    background: url('../images/additions.png') -15px -26px;
+    cursor: pointer;
+}
+.registerPrimaryNav .controller li.active{
+    background: url('../images/additions.png') -15px -1px;
+}
+.registerSecNav{
+    border-bottom: 1px solid #c6c5c5;
+}
+.rsNavContainer{
+    position: relative;
+    width: auto;
+    height: 10px;
+    border: 1px solid #ffffff;
+    background-color: #cbcbcb;
+    cursor: pointer;
+}
+.rsSplitLine{
+    float: left;
+    position: absolute;
+    left: 459px;
+    width: 1px;
+    height: 10px;
+    background-color: #ffffff;
+    z-index: 10;
+}
+.rsNavContainer .controller{
+    position: relative;
+    height: 10px;
+    width:459px;
+    background-color: #a0d500;
+    cursor: default;
+}
+.rsNavContainer .iterator{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 14px;
+    height: 11px;
+    background: url('../images/additions.png') 0 -29px;
+}
+.mapLayout{
+    width: 920px;
+    overflow: hidden;
+}
+#registerStep11, #registerStep12{
+    float: left;
+    width: 920px;
+}
+#registerForm1{
+    margin: 15px 0 10px;
+    line-height: 24px;
+}
+#registerForm1 label{
+    margin-right: 15px;
+}
+.teacherSearchForm{
+    float: left;
+    width: 520px;
+}
+.teacherSearchForm li{
+    line-height: 30px;
+    margin-top: 10px;
+}
+.teacherSearchForm .inputer{
+    position: relative;
+    float: right;
+    width: 420px;
+    height: 30px;
+    padding: 0 9px;
+    border: 1px solid #a0a0a0;
+}
+.teacherSearchForm .inputer.sorter{
+    width: 350px;
+}
+.teacherSearchForm .inputer.text{
+    cursor: text;
+}
+.teacherSearchForm .inputer span{
+    margin-right: 30px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+.teacherSearchForm .inputer span.active{
+    color: #ffffff;
+    background-color: #a0d500;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.teacherSearchForm .inputer span input{
+    width: 20px;
+    border: 1px solid #999;
+}
+.teachList{
+    width: auto;
+    margin-top: 18px;
+}
+.teachList li{
+    position: relative;
+    float: left;
+    width: 164px;
+    height: 164px;
+    margin: 15px 22px 0 0;
+    border: 1px solid #fff;
+    overflow: hidden;
+    cursor: pointer;
+}
+.teachList li.last{
+    margin-right: 0px;
+}
+.teachBlackInfo{
+    position: relative;
+    width: 162px;
+    height: 174px;
+    margin: -45px auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3a3a3a;
+    filter: alpha(opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+}
+.teachBlackInfo .name{
+    margin-right: 10px;
+}
+.teachBlackInfo .title{
+    color: #a0d500;
+}
+.teachBlackInfo .basic{
+    margin-top: 10px;
+}
+.teachList li .selected{
+    position: absolute;
+    float: left;
+    top: 5px;
+    left: 140px;
+    width: 21px;
+    height: 21px;
+    background: url('../images/additions.png') -19px -50px;
+    z-index: 10;
+}
+.jumpToSignup{
+    float: left;
+    width: 400px;
+    padding: 60px;
+    font-size: 19px;
+    line-height: 24px;
+    color: #888888;
+    font: 宋体;
+}
+.jumpToSignup a{
+    font-size: 19px;
+    font: 宋体;
+    color: #a0d500;
+}
+
+
+/**
+ * HC Map's
+ *
+ */
+.mapContainer{
+    width: 916px;
+    height: 400px;
+    overflow: hidden;
+    margin: 10px auto;
+    padding: 0px;
+    background: url('../images/map.png');
+    border: 2px solid #fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.hcRow, .hcEvenRow{
+    width:1500px;
+}
+.hcEvenRow{
+    margin-left: -18px;
+}
+.hcUnit{
+    float: left;
+    width: 36px;
+    height: 42px;
+    margin-top: -9px;
+    background: url('../images/honeycomb.png') no-repeat;
+    background-position: -3px -48px;
+}
+.hcArea{
+    background-position: -1px -2px;
+    cursor: pointer;
+}
+.hcArea.active, .hcArea.hoveractive{
+    background-position: -39px -2px;
+}
+
+#registerStep2 .title{
+    width: 100%;
+}
+#registerStep1 .generalForm{
+    margin-left: 330px;
+}
+#registerStep2 .studentForm .generalForm{
+    margin-left: 260px;
+}
+#registerStep1 .generalForm li .formContent{
+    font-size: 15px;
+}
+#registerStep1 .generalForm li .selectedCity{
+    color: #2d5c00;
+    font-weight: bold;
+}
+#registerStep1 .generalForm li .nextStep{
+    width: 215px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.teacherSuccess .tips, 
+.studentSuccess .tips {
+    position: relative;
+    margin-bottom: 60px;
+}
+.teacherSuccess .tips .interator{
+    position: absolute;
+    float: left;
+    left: 550px;
+    top: -15px;
+    width: 27px;
+    height: 15px;
+    background: url('../images/additions.png') no-repeat -13px -73px;
+}
+.studentSuccess .tips .interator{
+    position: absolute;
+    float: left;
+    left: 600px;
+    top: -15px;
+    width: 27px;
+    height: 15px;
+    background: url('../images/additions.png') no-repeat -13px -73px;
+}
+.teacherSuccess .tips ul{
+    width: 430px;
+    margin: 0 auto;
+    padding: 25px 20px 1px 40px;
+    font-size: 17px;
+    line-height: 22px;
+    color: #ffffff;
+    list-style: url('../images/icon_tips.png') outside;
+    background-color: #78ad25;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+.studentSuccess .tips ul{
+    width: 630px;
+    margin: 0 auto;
+    padding: 25px 20px 1px 40px;
+    font-size: 17px;
+    line-height: 22px;
+    color: #ffffff;
+    list-style: url('../images/icon_tips.png') outside;
+    background-color: #78ad25;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+.teacherSuccess .tips ul li,
+.studentSuccess .tips ul li{
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.popupClass .classLayout{
+    width: 560px;
+    padding: 5px 15px 15px 15px;
+    background-color: #eeeeee;
+    border: 1px solid #a0a0a0;
+}
+.popupClass .classLayout .classHead li{
+    float: left;
+}
+.popupClass .classLayout .classHead .active,
+.popupClass .classLayout .classBody{
+    background-color: #ffffff;
+}
+.popupClass .classLayout .classBody{
+    padding: 0px 10px 10px 10px;
+    display: none;
+}
+.popupClass .classLayout .classHead li{
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+.popupClass .classLayout .classBody .clearfix div{
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+.popupClass .classLayout .classBody li.clearfix{
+    font-size: 13px;
+    line-height: 35px;
+    margin-bottom: 8px;
+}
+.popupClass .classLayout .classBody li.clearfix ul{
+    display: none;
+    width: 428px;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory{
+    margin-bottom: 0;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory ul{
+    width: 430px;
+    background: #ffffff url('../images/classCat.png') repeat-x 0 34px;
+    border: none;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory li{
+    padding: 0px 7px;
+    margin: 0px;
+    line-height: 35px;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory li.active{
+    color: #a0d500;
+    background: #ffffff url('../images/classCatIterator.png') no-repeat center 23px;
+    border: none;
+}
+.popupClass .classLayout .classBody li.clearfix.classSubject ul{
+    border-top: none;
+    border-left: 1px solid #a0d500;
+    border-right: 1px solid #a0d500;
+    border-bottom: 1px solid #a0d500;
+}
+.popupClass .classLayout .classControll .bnConfirm{
+    padding: 0 72px;
+    line-height: 28px;
+    margin: 10px 0 0 90px;
+}
+.popupTeacher .teacherLayout{
+    width: 440px;
+    border: 1px solid #a0a0a0;
+    background-color: #eeeeee;
+    padding: 20px 10px 10px 10px;
+}
+.popupTeacher .teacherLayout .selectInput li ul{
+    width: 320px;
+}
+.popupTeacher .teacherLayout .bnConfirm{
+    margin-left: 80px;
+    line-height: 28px;
+}
+.popupSchedule .scheduleLayout{
+    width: 440px;
+    border: 1px solid #a0a0a0;
+    background-color: #eeeeee;
+    padding: 15px 10px 10px 10px;
+}
+.popupSchedule .scheduleLayout table{
+    border-top: 1px solid #000;
+}
+.popupSchedule .scheduleLayout table tr{
+    border-bottom: 1px solid #000;
+}
+.popupSchedule .scheduleLayout table td{
+    border-left: 1px solid #000;
+    padding: 2px;
+    text-align: center;
+}
+.popupSchedule .scheduleLayout table tbody td{
+    cursor: pointer;
+}
+.popupSchedule .scheduleLayout table tbody td.active{
+    background-color: #a0d500;
+}
+.popupSchedule .scheduleLayout table td.first{
+    border-left: none;
+    line-height: 18px;
+    cursor: default;
+}
+.popupSchedule .scheduleLayout .bnConfirm{
+    margin: 10px auto 0 135px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.studentForm .title{
+    margin-left: 110px;
+    margin-bottom: 10px;
+    line-height: 27px;
+    font-size: 18px;
+    color: #2d5c00;
+}
+.studentForm .title span{
+    padding: 4px 20px 5px 10px;
+    line-height: 28px;
+    margin-right: 20px;
+    color: white;
+    background: url('../images/additions.png') no-repeat 0 -88px;
+}
+.studentForm .teacherSelectedConfirm li{
+    float: left;
+    margin: 8px;
+}
+.studentForm .submit{
+    width: 225px;
+}
+#teacherRegisterStep2{
+    margin: 10px 60px;
+}
+#teacherRegisterStep2 .nextStep{
+    text-align: center;
+    margin-left: 250px;
+    width: 200px;
+}
+.greenTags li{
+    float: left;
+}
+.flexableForm li .title{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 27px;
+    margin: 10px 0;
+    padding-left: 30px;
+    background: url('../images/dott.png') repeat-x 0 14px;
+    cursor: pointer;
+}
+.flexableForm li .title .againstDott{
+    margin-left: -30px;
+    padding-left: 30px;
+    background: url('../images/dott_against.png') repeat-x 0 14px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    cursor: pointer;
+}
+.flexableForm li .title .openclose{
+    line-height: 27px;
+    height: 27px;
+    margin-left: -30px;
+    padding-left: 30px;
+    padding-right: 10px;
+    background: url('../images/additions.png') no-repeat 0 -143px;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.flexableForm li ul{
+    font-size: 13px;
+    margin-left: 125px;
+    display: none;
+    color: #888888;
+}
+.flexableForm li ul input{
+    color: #888888;
+}
+.flexableForm li ul label{
+    margin-left: 3px;
+    color: #888888;
+}
+.flexableForm li ul select{
+    padding: 5px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #a0a0a0;
+    background: white;
+    color: #888888;
+}
+.flexableForm li ul li .inputer1, .flexableForm li ul li .inputer2{
+    width: 195px;
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid #a0a0a0;
+}
+.flexableForm li ul li .inputer2{
+    width: 400px;
+}
+.flexableForm li ul li{
+    height: 40px;
+    line-height: 30px;
+}
+.flexableForm li.active ul{
+    display: block;
+}
+.flexableForm li.active .title {
+    cursor: default;
+}
+.flexableForm li.active .title .openclose{
+    cursor: default;
+}
+.flexableForm li.active .title .openclose{
+    background-position: 0 -170px;
+}
+.required:before {
+    content: '*';
+    color: red;
+    padding: 0 2px 0 10px;
+}
+.greenTags{
+    height: 50px;
+    width: 120%;
+    line-height: 40px;
+    font-size: 21px;
+    color: #2d5c00;
+}
+.greenTags li{
+    position: relative;
+    padding: 0 8px;
+    margin: 0 18px;
+    cursor: pointer;
+}
+.greenTags li.active{
+    color: #fff;
+    text-align: center;
+    background-color: #a0d500;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    text-shadow: #92c200 0 1px;
+    -webkit-text-shadow: #92c200 0 1px;
+    -moz-text-shadow: #92c200 0 1px;
+    -o-text-shadow: #92c200 0 1px;
+}
+.greenTags .iterator{ display: none; }
+.greenTags .active .iterator {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    background: url('../images/additions.png') no-repeat center -200px;
+}
+#registerStep3 .generalForm{
+    margin-left: 310px;
+    margin-bottom: 120px;
+}
+#registerStep3 .generalForm .browse{
+    padding: 12px 5px;
+    font-size: 13px;
+    color: #2d5c00;
+    line-height: 36px;
+    background: url('../images/buttons.png') no-repeat -227px -157px;
+}
+#registerStep3 .generalForm .Button40{
+}
+
+/**
+ *
+ * Back End Managements
+ *
+ */
+#backUserControll span{
+    vertical-align: top;
+}
+#backUserControll{
+    position: absolute;
+    float: right;
+    top: 30px;
+    right: 20px;
+}
+.BackLayout{
+    padding: 20px 0;
+}
+.glassBody .BackLayout{
+    padding: 20px 20px;
+}
+
+#dropServiceContact{
+    position: absolute;
+    width: 960px;
+    height: 28px;
+    margin-top: -8px;
+    color: #ffffff;
+    overflow: hidden;
+    z-index: 99999999;
+}
+#dropServiceContact .theBody{
+    margin-top: -137px;
+    height: 145px;
+    padding: 10px 40px;
+    background-color: #78AD25;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+#dropServiceContact .theBody div{
+    float: left;
+    font-size: 13px;
+}
+#dropServiceContact .theBody div.title{
+    width: 140px;
+    padding-top: 15px;
+}
+#dropServiceContact .theBody div.form{
+    position: relative;
+    width: 540px;
+}
+#dropServiceContact .theBody div.additions div{
+    vertical-align: middle;
+    height: 100%;
+    padding: 15px 10px 10px 10px;
+}
+#dropServiceContact .theBody div.additions div.theOr{
+    padding-top: 35px;
+}
+#dropServiceContact .theBody div.form textarea{
+    margin-left: 9px;
+    width: 530px;
+    background: #ffffff;
+    border-color: #2d5c00;
+}
+#dropServiceContact .theBody div.form .interator{
+    float: left;
+    position: absolute;
+    top: 35px;
+    width: 12px;
+    height: 15px;
+    background: url('../images/additions.png') no-repeat 0 -229px;
+}
+#dropServiceContact .theBody div.form .action{
+    width: 100%;
+}
+#dropServiceContact .theBody div.form .action input{
+    margin: 10px 20px 0 20px;
+    width: 120px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #63990e;
+    border: 1px solid #84cd11;
+    cursor: pointer;
+}
+#dropServiceContact .controller{
+    width: 120px;
+    height: 24px;
+    margin-top: -4px;
+    margin-left: 800px;
+    padding-top: 4px;
+    text-align: center;
+    background-color: #78AD25;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    cursor: pointer;
+}
+
+.BackLayout a{
+    color: #2D5C00;
+}
+.BackLayout .title .label{
+    font-size: 21px;
+    color: #2d5c00;
+}
+#BackLayout .panel{
+    float: left;
+    width: 636px;
+    min-height: 400px;
+    _height:expression((document.documentElement.clientHeight||document.body.clientHeight)>400?"400px":"");
+    padding: 20px 10px 20px 0;
+    background: url('../images/left_shadow.png') repeat-y 626px;
+}
+#BackLayout .panel .modules{
+    padding: 10px 26px;
+}
+#BackLayout .panel .separate{
+    width: 100%;
+    height: 12px;
+    margin: 10px 0;
+    background: url('../images/panel_separate.png') no-repeat;
+}
+#BackLayout a.addtions{
+    float: right;
+}
+#BackLayout .msgModule .messages{
+    margin-top: 15px;
+}
+#BackLayout .msgModule .messages li{
+    padding: 5px 0;
+    border-top: 1px solid #888888;
+}
+#BackLayout .msgModule .messages li.first{
+    border: none;
+}
+#BackLayout .msgModule .messages li a{
+    text-decoration: underline;
+}
+#BackLayout .msgModule .messages .date{
+    float: right;
+    text-align: right;
+}
+
+#BackLayout .controllPanel .controlls{
+    width: 595px;
+    height: 137px;
+    background: url('../images/controll_panel.png') no-repeat;
+    margin: 10px auto;
+    padding: 3px 7px 7px 7px;
+}
+#BackLayout .controllPanel .controlls ul.clearfix {
+    margin: 0 auto;
+    text-align: center;
+}
+#BackLayout .controllPanel .controlls ul.clearfix li{
+    padding: 10px 7px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+#BackLayout .controllPanel .controlls .title{
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    color: #ffffff;
+    font-size: 15px;
+}
+#BackLayout .controllPanel .controlls .left{
+    float: left;
+    width: 283px;
+    height: 117px;
+    border-right: 1px solid #ffffff;
+}
+#BackLayout .controllPanel .controlls .right{
+    float: left;
+    width: 283px;
+    height: 117px;
+}
+.iconFind{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat}
+.iconClass{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat -50px}
+.iconTeacher{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat -100px}
+.iconAdd{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat -150px}
+.iconAchive{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat -200px}
+.iconPlan{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat -250px}
+.iconUpload{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat -300px}
+.iconEdit{width:50px;height:51px;background:url('../images/cpicons.png') no-repeat -350px}
+
+#BackLayout .possibleTeachers .teacherList{
+    margin: 10px auto;
+}
+#BackLayout .possibleTeachers .teacherList li.first{
+    margin: 0px;
+}
+#BackLayout .possibleTeachers .teacherList li{
+    float: left;
+    padding: 12px;
+    margin-left: 15px;
+    width: 129px;
+    height: 254px;
+    border: 1px solid #ffffff;
+    box-shadow: #bebcbd 0 1px;
+    -webkit-box-shadow: #bebcbd 0 1px;
+    -moz-box-shadow: #bebcbd 0 1px;
+    -o-box-shadow: #bebcbd 0 1px;
+}
+#BackLayout .possibleTeachers .teacherList li img{
+    width: 105px;
+    height: 105px;
+}
+#BackLayout .possibleTeachers .teacherList li .title{
+    margin-top: 6px;
+    font-weight: bold;
+    color: #78ad25;
+}
+#BackLayout .possibleTeachers .teacherList li .technical{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#BackLayout .widget{
+    float:left;
+    width: 324px;
+    overflow: hidden;
+}
+#BackLayout .widget .modules .title{
+    padding: 10px 0 10px 15px;
+    background: url('../images/widget_separate.png') repeat-y;
+    color: #2d5c00;
+    margin-top: 20px;
+}
+#BackLayout .widget .orderList .orders li.first{
+    border: none;
+}
+#BackLayout .widget .orderList .orders li{
+    padding: 8px;
+    height: 66px;
+    border-top: 1px solid #888888;
+}
+#BackLayout .widget .orderList .orders li .ititle{
+    font-weight: bold;
+}
+#BackLayout .widget .orderList .orders li .status{
+    margin-top: 10px;
+}
+#BackLayout .widget .orderList .orders li .photo{
+    float: left;
+    border: 1px solid #ffffff;
+}
+#BackLayout .widget .orderList .orders li .detail{
+    margin-left: 65px;
+}
+#BackLayout .widget .customService p{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+#BackLayout .widget .advertisement{
+    margin: 20px auto;
+    width: 318px;
+    height: 190px;
+    overflow: hidden;
+    border: 3px solid #ffffff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+#BackLayout .widget .advertisement140{
+    width: 308px;
+    height: 130px;
+    overflow: hidden;
+    margin-left: 10px;
+    border: 3px solid #ffffff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.BackLayout a.generalButton{
+    color: #fff;
+}
+
+#myClasses {
+    min-height: 300px;
+}
+#myClasses #innerNav{
+    float: left;
+    width: 200px;
+}
+#myClasses #innerNav a{
+    color: #2d5c00;
+    font-size: 18px;
+    line-height: 40px;
+    padding-left: 15px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+#myClasses #innerNav .active{
+    background: url('../images/buttons.png') 0 -197px;
+}
+#myClasses #innerNav .active a{
+    color: white;
+}
+#myClasses .mainLayout{
+    width: 720px;
+    margin-left: 200px;
+}
+#myClasses .mapLayout{
+    width: 720px;
+}
+#myClasses #registerStep11, #myClasses #registerStep12{
+    width: 720px;
+}
+#myClasses .rsSplitLine{
+    left: 359px;
+}
+#myClasses .rsNavContainer .controller{
+    width: 359px;
+}
+#myClasses .mapContainer{
+    width: 720px;
+}
+#myClasses .hcRow{
+    margin-left: -100px;
+}
+#myClasses .hcEvenRow{
+    margin-left: -118px;
+}
+#myClasses .mapContainer{
+    background-position: -100px;
+}
+#myClasses .jumpToSignup{
+    width: 240px;
+    padding: 60px 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+#myClasses .jumpToSignup a{
+    font-size: 14px;
+}
+#myClasses .teacherSearchForm{
+    width: 480px;
+}
+#myClasses .teacherSearchForm .inputer{
+    width: 410px;
+}
+#myClasses .teacherSearchForm .inputer span{
+    padding: 3px 8px;
+}
+#myClasses .teacherSearchForm .inputer.sorter{
+    width: 340px;
+}
+#myClasses .teachList li{
+    width: 132px;
+    height: 134px;
+    margin-right: 15px;
+}
+#myClasses .teachList li.last{
+    margin-right: 0;
+}
+#myClasses .teachList li .selected{
+    left: 108px;
+}
+#myClasses .teachBlackInfo{
+    width: 112px;
+    height: 134px;
+    margin: -75px auto;
+}
+#myClasses .studentSuccess .textOrderSuccess{
+    margin-bottom: 0;
+}
+#myClasses .studentSuccess .tips ul{
+    width: 450px;
+}
+#myClasses .studentSuccess .tips .interator{
+    left: 460px;
+}
+#myClasses .studentSuccess .title{
+    height: 90px;
+}
+#myClasses .studentSuccess .textOrderSuccess{
+    margin-left: 120px;
+}
+#myClasses .mainLayout .classesSearchForm{
+    height: 120px;
+    overflow: hidden;
+}
+#myClasses .mainLayout .classesSearchForm .advertisement{
+    width: 280px;
+    height: 90px;
+    overflow: hidden;
+}
+#myClasses .mainLayout .classesSearchForm p{
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#myClasses .mainLayout .classesSearchForm .label{
+    font-size: 16px;
+}
+#myClasses .mainLayout .classesSearchForm p select{
+    width: 345px;
+    height: 30px;
+    border: 1px solid #a0a0a0;
+    background: transparent;
+}
+#myClasses .mainLayout .classesSearchForm p .selector{
+    width: 345px;
+    height: 30px;
+    line-height: 28px;
+    border: 1px solid #a0a0a0;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+#myClasses .mainLayout .classesSearchForm p .selector span{
+    margin-left: 12px;
+    padding: 5px;
+    line-height: 30px;
+    font-size: 13px;
+    cursor: pointer;
+}
+#myClasses .mainLayout .classesSearchForm p .selector span.active{
+    color: #ffffff;
+    background-color: #a0d500;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+#myClasses .mainLayout .appointmentSearchForm{
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#myClasses .mainLayout .appointmentSearchForm .label{
+    font-size: 16px;
+}
+#myClasses .mainLayout .appointmentSearchForm p .selector{
+    margin-left: 30px;
+    width: 600px;
+    height: 30px;
+    line-height: 28px;
+    border: 1px solid #a0a0a0;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+#myClasses .mainLayout .appointmentSearchForm p .selector span{
+    margin-left: 12px;
+    padding: 5px;
+    line-height: 30px;
+    font-size: 13px;
+    cursor: pointer;
+}
+#myClasses .mainLayout .appointmentSearchForm p .selector span.active{
+    color: #ffffff;
+    background-color: #a0d500;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+#myClasses .mainLayout .appointments h1{
+    line-height:30px;
+    border-bottom: 1px dashed #939393;
+}
+#myClasses .mainLayout .appointments h1.label{
+    font-size: 16px;
+}
+#myClasses .mainLayout .appointments h1 .floatRight{
+    font-size: 13px;
+}
+#myClasses .mainLayout .appointments h1 .floatRight span{
+    font-weight: normal;
+    color: #2d5c00;
+    font-size: 13px;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+#myClasses .mainLayout .appointments h1 .floatRight span.active{
+    color: #ffffff;
+    background-color: #a0d500;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+#myClasses .mainLayout .classesDetailList{
+    letter-spacing: 1px;
+}
+#myClasses .mainLayout .classesDetailList ul li{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid #888888;
+    border-top: 1px solid #ffffff;
+}
+#myClasses .mainLayout .classesDetailList h1{
+    line-height:30px;
+    border-bottom: 1px dashed #939393;
+}
+#myClasses .mainLayout .classesDetailList .label{
+    font-size: 16px;
+}
+#myClasses .mainLayout .classesDetailList p{
+    line-height: 25px;
+}
+#myClasses .mainLayout .classesDetailList a{
+    text-decoration: underline;
+}
+#myClasses .mainLayout .classesDetailList .controller{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #FF7800;
+}
+#myClasses .mainLayout .classesDetailList .controller .orangeButton{
+    margin-top: -10px;
+    text-decoration: none;
+}
+#myClasses .mainLayout .classesDetailList .controller .floatLeft div{
+    margin-top: -3px;
+}
+
+#BackLayout .panel .studentInfo p{
+    width: 440px;
+    line-height: 27px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#BackLayout .panel .studentInfo .label{
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+}
+#BackLayout .panel .studentInfo .photo{
+    margin: 0 15px 0 0; 
+}
+#BackLayout .panel .studentInfo .detail{
+    margin-top: 30px;
+}
+#BackLayout .panel .teacherInfo p{
+    color: #888888;
+    width: 440px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#BackLayout .panel .teacherInfo p a{
+    text-decoration: underline;
+}
+#BackLayout .panel .teacherInfo p input{
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    color: #2d5c00;
+    border: 1px solid #a0d500;
+    text-decoration: underline;
+}
+#BackLayout .panel .teacherInfo p input.active{
+    border: 1px solid #a0a0a0;
+    background: #a0d500;
+}
+#BackLayout .panel .teacherInfo p input.half{
+    width: 170px;
+}
+#BackLayout .panel .teacherInfo p input.full{
+    width: 340px;
+}
+#BackLayout .panel .teacherInfo .label{
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+}
+#BackLayout .panel .teacherInfo .photo{
+    margin: 0 15px 0 0; 
+}
+#BackLayout .panel .modules .title .plusButton{
+    margin-top: -8px;
+}
+#BackLayout .panel .modules.classRequirementModule .requirements li{
+    margin-bottom: 20px; 
+    padding-bottom: 35px; 
+    border-bottom: 1px solid #888888;
+}
+#BackLayout .panel .modules.classRequirementModule .requirements li p span{
+    vertical-align: bottom;
+}
+#BackLayout .panel .modules.classRequirementModule .requirements li p{
+    width: 570px;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#BackLayout .panel .modules.classRequirementModule .requirements li p .leftDetail{
+    width: 350px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+#BackLayout .panel .modules.classRequirementModule .requirements li .controller{
+    margin-top: -20px;
+}
+#BackLayout .panel .modules.classRequirementModule .requirements li .controller a{
+    float: right;
+    margin-right: 10px;
+}
+#BackLayout .widget .modules .title .plusButton{
+    margin: -10px -10px -10px 0;
+}
+#BackLayout .widget .modules.archiveList .archives li{
+    padding: 15px 0 5px 0;
+    margin-left: 15px;
+    border-bottom: 1px solid #888888;
+}
+#BackLayout .widget .modules.archiveList .archives li a{
+    color: #2d5c00;
+    text-decoration: underline;
+}
+#BackLayout .widget .modules.archiveList .archives li .action{
+    float: right;
+    margin-right: 10px;
+}
+#BackLayout .widget .modules.contactInfo .contact p{
+    padding: 10px 0 0 15px;
+    line-height: 26px;
+}
+#BackLayout .widget .modules.contactInfo .contact p input{
+    width: 105px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    color: #2d5c00;
+    border: 1px solid #a0d500;
+    text-decoration: underline;
+}
+#BackLayout .widget .modules.contactInfo .contact p input.active{
+    border: 1px solid #a0a0a0;
+    background: #a0d500;
+}
+.BackLayout .modules.appointments ul.appointmentList li.first{
+    border-top: none;
+}
+.BackLayout .modules.appointments ul.appointmentList li{
+    padding: 15px 0;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #888888;
+}
+.BackLayout .modules.appointments ul.appointmentList li.last{
+    border-bottom: none;
+}
+.BackLayout .modules.appointments ul.appointmentList li .info{
+    margin-left: 10px;
+}
+
+.BackLayout .modules.classDetailList .title .additions{
+    color: #2D5C00;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+.BackLayout .modules.classDetailList .flexableForm li .title{
+    background: none;
+    font-size: 13px;
+    font-weight: normal;
+}
+.BackLayout .modules.classDetailList .flexableForm li .title .info{
+    width: 534px;
+    border-bottom: 1px solid #888888;
+    margin-left: -5px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+}
+.BackLayout .modules.classDetailList .flexableForm li .title .info span{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.BackLayout .modules.classDetailList .flexableForm li .title .againstDott{
+    background: none;
+}
+.BackLayout .modules.classDetailList .flexableForm li ul{
+    margin-left: 40px;
+}
+.BackLayout .modules.classDetailList .flexableForm li ul li{
+    height: auto;
+    line-height: 150%;
+    background: none;
+}
+.BackLayout .modules.classDetailList .flexableForm li ul li textarea{
+    width: 520px;
+}
+.BackLayout .modules.classDetailList .flexableForm li ul li .counter{
+    float:right;
+    margin-top: -25px;
+    margin-right: 25px;
+    line-height: 13px;
+    font-style: italic;
+}
+.BackLayout .modules.classDetailList .flexableForm li ul li .counter .cur{
+    color: #A0D500;
+}
+.BackLayout .modules.classDetailList .flexableForm li ul li.controller{
+    color: #2D5C00;
+    font-weight: bold;
+    font-size: 16px;
+}
+.BackLayout .modules.classDetailList .flexableForm li ul li.controller label{
+    color: #2D5C00;
+    font-size: 13px;
+}
+#BackLayout .widget .classDetail .addtions{
+    margin-top: 10px;
+    font-size: 18px;
+}
+#BackLayout .widget .classDetail .addtions a{
+    margin-left: 40px;
+}
+#BackLayout .widget .classDetail a{
+    color: #78AD25;
+    text-decoration: underline;
+}
+#BackLayout .widget .classDetail li{
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+#BackLayout .widget .classDetail li .photo{
+    float: left;
+    border: 1px solid #ffffff;
+}
+#BackLayout .widget .classDetail li .detail{
+    margin-left: 65px;
+}
+
+#assistant{
+    position: relative;
+}
+#assistant .assistant{
+    position: absolute;
+    float: left;
+    width: 224px;
+    height: 141px;
+    left: -15px;
+    bottom: -30px;
+    background: url('../images/assistant.png') no-repeat;
+}

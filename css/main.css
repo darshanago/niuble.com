@@ -1,0 +1,218 @@
+/* http://www.xd.com
+   v3.0 | 2012.03
+*/
+/*
+ * Naming and Style Rules (v0.1):
+ * Created By 代立晨
+ * 2012-03-22
+ *
+ * 属性类如：marginLeft, floatRight用驼峰命名，首字小写
+ * 其他类用小写+下划线
+ *
+ * 表示方位、大小、名称、动作如：left, top, little, big, text, submit, cancel等
+ * * 原则上不设置通用属性，应与父元素或同级类联用，如：.widget .left{} .widget.left{} (注意两个类中间额空格)
+ *
+ * 原则上使用主、次、功能名为有多个并列的类命名。
+ * * 避免使用表示颜色、大小等形容词，red_text, red_widget, left_column
+ * * 推荐使用：primary_text, primary_widget, .primary_column, .server.widget
+ * * 因为这样当遇到css重构的时候，会比较方便
+ *
+ *
+ * Style Part: 
+ * 在使用mainLayout的时候，将页面名命名为类名并添加到mainlayout的同级元素。然后用.页面名.mainLayout 作为所有定义的前缀
+ * * 若已将css分文件则可忽略此条。
+ * * 其他元素的继承参考此方法。!important
+ *
+ * 对某些特例使用noBorder, noBorderLeft等类，或继续扩展
+ * * 如每个widget设置margin-bottom为10px，但最后一个元素不应有margin，则给其class="noMarginBottom"
+ *
+ * 颜色全部６位，不使用３位简写
+ *
+ * 将:hover伪类与.hover类同时定义，便于处理一些兼容问题
+ * 原则上将用,隔开的并列选择器换行
+ * * 如：
+ * * * a.png_button.hover,
+ * * * a.png_button:hover {
+ * * *     ...
+ * * * }
+ * * *
+ *
+ * 为了便于阅读，尽量将有并列关系并只定义了1-3个属性的类使用单行定义。
+ * * 注：并列 && 属性{1,3}，这两个标准缺一不可
+ */
+
+/* Global Styles */
+.clearfix:after {
+    clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+ul.clearfix li { float: left; }
+.clearfix {height: 100%;}
+* html .clearfix { height: 1%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, 
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, input, select,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    box-sizing:content-box;
+    -o-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -icab-box-sizing:content-box;
+    -khtml-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	font:12px/1.8 Hei,宋体,Arial,sans-serif;
+	/*防止横向滚动条*/
+	overflow-x:hidden;
+	color:#333333;
+}
+img {
+    vertical-align: top;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*main .css 2011.9.28 xdnew _v2 xd.com*/
+a{
+    color: #888888;
+	text-decoration:none;
+}
+span{
+	color:inherit;
+}
+a:hover {
+	text-decoration:underline;
+    color: #ff6600;
+}
+
+
+/***************************** END OF RESET *********************************/
+/***************************** COMMON BEGIN *********************************/
+/* 
+ * 规定黑、白、第一灰度、第二灰度、最小灰度
+ * 规定主色、第一辅色、第二辅色
+ * 命名为 名称+'Color' 或 名称+'Bg'
+ *
+ * 分别命名为：blank, white, firstGray, secondGray, lastGray
+ *             primary, firstAssist, secondAssist
+ */
+.blankColor{ color: #333333; }
+.whiteColor{ color: #ffffff; }
+
+.firstGrayColor{ color: #666666; }
+.secondGrayColor{ color: #999999; }
+.middleGrayColor{ color: #dadada; }
+.lastGrayColor{ color: #cccccc; }
+
+.primaryColor{ color: #ff6600; }
+.firstAssistColor{ color: #ed1c24; }
+.secondAssistColor{ color: #ffd700; }
+
+/*背景部分*/
+.blankBg{ background-color: #333333; }
+.whiteBg{ background-color: #ffffff; }
+
+.firstGrayBg{ background-color: #666666; }
+.secondGrayBg{ background-color: #999999; }
+.middleGrayBg{ background-color: #dadada; }
+.lastGrayBg{ background-color: #cccccc; }
+
+.primaryBg{ background-color: #ff6600; }
+.firstAssistBg{ background-color: #ed1c24; }
+.secondAssistBg{ background-color: #ffd700; }
+/* 颜色定义结束 */
+
+.floatLeft{ float: left; }
+.floatRight{ float: right; }
+.textLeft{ text-align: left; }
+.textRight{ text-align: right; }
+.textCenter{ text-align: center; }
+.bold{ font-weight: bold; }
+.relative{ position: relative; }
+.absolute{ position: absolute; }
+.displayNone{ display: none; }
+.iBlock{ display: inline-block; *display: inline; zoom: 1; }
+
+.mainLayout{ margin-left:auto; margin-right:auto; width: 980px; }
+.blockCenter{ margin-left:auto; margin-right:auto; }
+.hideText{ text-indent:-99999px; }
+
+.noBorder{border:none !important;}
+.noBorderLeft{border-left:none !important;}
+.noBorderRight{border-right:none !important;}
+.noBorderTop{border-top:none !important;}
+.noBorderBottom{border-bottom:none !important;}
+
+.noMargin{margin:0 !important;}
+.noMarginLeft{margin-left:0 !important;}
+.noMarginRight{margin-right:0 !important;}
+.noMarginTop{margin-top:0 !important;}
+.noMarginBottom{margin-bottom:0 !important;}
+
+.noPadding{padding:0 !important;}
+.noPaddingLeft{padding-left:0 !important;}
+.noPaddingRight{padding-right:0 !important;}
+.noPaddingTop{padding-top:0 !important;}
+.noPaddingBottom{padding-bottom:0 !important;}
+
+.marginTop0{margin-top: 0;}
+.marginLeft0{margin-left: 0;}
+.marginRight0{margin-right: 0;}
+.marginBottom0{margin-bottom: 0;}
+
+/********** 华丽地分啦  ****************/

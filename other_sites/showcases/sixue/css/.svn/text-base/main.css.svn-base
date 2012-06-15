@@ -1,0 +1,338 @@
+/* Global Styles */
+.clearfix:after { clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+html{
+	color:#000;
+	background:#FFF;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+    font-family: Arial, Helvetica, sans-serif, ËÎÌå;
+	vertical-align: middle;
+	background: transparent;
+    word-wrap:break-word;
+}
+
+body{
+    font-family: sans-serif;
+	font-size: 13px;
+    line-height: 150%;
+    background: #fff url('../images/header.png') top center no-repeat;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table { border-collapse:collapse; border-spacing:0; }
+fieldset, img { border:0; }
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style:normal;
+	font-weight:normal;
+}
+
+caption, th {
+	text-align:left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+
+a.origin{ text-decoration: underline; } 
+a{ text-decoration: none; }
+q:before, q:after { content:''; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+
+abbr, acronym {
+	border:0;
+	font-variant:normal;
+}
+
+input, textarea, select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+}
+/*to enable resizing for IE*/
+input, textarea, select { *font-size:100%; }
+/*because legend doesn't inherit in IE */
+legend { color:#000; }
+
+.marginAuto {margin:auto !important;}
+.marginBottom0 {margin-bottom:0px !important;}
+.marginBottom5 {margin-bottom:5px !important;}
+.marginBottom10 {margin-bottom:10px !important;}
+.marginBottom15 {margin-bottom:15px !important;}
+.marginBottom20 {margin-bottom:20px !important;}
+.marginTop0 {margin-top:0px !important;}
+.marginTop5 {margin-top:5px !important;}
+.marginTop10 {margin-top:10px !important;}
+.marginTop15 {margin-top:15px !important;}
+.marginTop20 {margin-top:20px !important;}
+.marginTopm7 {margin-top:-7px !important;}
+.marginLeft0 {margin-left:5px !important;}
+.marginLeft5 {margin-left:5px !important;}
+.marginLeft10 {margin-left:10px !important;}
+.marginLeft15 {margin-left:15px !important;}
+.marginLeft20 {margin-left:20px !important;}
+.marginRight0 {margin-right:5px !important;}
+.marginRight5 {margin-right:5px !important;}
+.marginRight10 {margin-right:10px !important;}
+.marginRight15 {margin-right:15px !important;}
+.marginRight20 {margin-right:20px !important;}
+.margin0 {margin:0px !important;}
+.margin5 {margin:5px}
+.margin10 {margin:10px}
+.margin15 {margin:15px}
+.margin20 {margin:20px}
+.marginTop-5 {margin-top:-5px !important;}
+.marginTop-10 {margin-top:-10px !important;}
+.marginTop-15 {margin-top:-15px !important;}
+
+/** --- paddings --- **/
+
+.paddingBottom0 {padding-bottom:0px !important;}
+.paddingBottom5 {padding-bottom:5px !important;}
+.paddingBottom10 {padding-bottom:10px !important;}
+.paddingBottom15 {padding-bottom:15px !important;}
+.paddingBottom20 {padding-bottom:20px !important;}
+.paddingTop0 {padding-top:0px !important;}
+.paddingTop3 {padding-top:3px !important;}
+.paddingTop5 {padding-top:5px !important;}
+.paddingTop10 {padding-top:10px !important;}
+.paddingTop20 {padding-top:20px !important;}
+.paddingLeft0 {padding-left:5px !important;}
+.paddingLeft5 {padding-left:5px !important;}
+.paddingLeft10 {padding-left:10px !important;}
+.paddingLeft20 {padding-left:20px !important;}
+.paddingRight0 {padding-right:5px !important;}
+.paddingRight5 {padding-right:5px !important;}
+.paddingRight10 {padding-right:10px !important;}
+.paddingRight20 {padding-right:20px !important;}
+.padding0 {padding:0px !important;}
+.padding5 {padding:5px}
+.padding10 {padding:10px}
+.padding15 {padding:15px}
+.padding20 {padding:20px}
+.w350 { width: 350px !important; }
+
+.label { font-family: ºÚÌå; font-weight: bold; color: #000;}
+
+.floatLeft{ float: left; }
+.floatRight{ float: right; }
+.textLeft{ text-align: left; }
+.textRight{ text-align: right; }
+.textCenter{ text-align: center; }
+.bold{ font-weight: bold; }
+.relative{ position: relative; }
+.absolute{ position: absolute; }
+.displayNone{ display: none; }
+.iBlock{ display: inline-block; *display: inline; zoom: 1; }
+
+.greenBorder{
+    border: 1px solid #a0d500 !important;
+}
+.greenButton{
+    color: #fff;
+    background: #63990e;
+    border: 1px solid #84cd11;
+    padding: 8px;
+    text-decoration: none;
+}
+.line1{
+    height: 2px;
+    width: 100%;
+    background: url('../images/line1.jpg') repeat-x;
+}
+.grayButton{
+    color: #fff;
+    text-align: center;
+    background-color: #d4d4d4;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    text-shadow: #949494 0 1px;
+    -webkit-text-shadow: #949494 0 1px;
+    -moz-text-shadow: #949494 0 1px;
+    -o-text-shadow: #949494 0 1px;
+}
+.generalButton{
+    color: #fff;
+    text-align: center;
+    background-color: #a0d500;
+    border: 1px solid #94c500;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    text-shadow: #92c200 0 1px;
+    -webkit-text-shadow: #92c200 0 1px;
+    -moz-text-shadow: #92c200 0 1px;
+    -o-text-shadow: #92c200 0 1px;
+}
+.Button40{
+    padding: 0 40px;
+    line-height: 40px;
+    font-size: 20px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.sliderContainerX{
+    width:9999px;
+}
+.bn_white_33{
+    background: url('../images/buttons.png') no-repeat -124px -160px;
+    color: #2d5c00;
+    width: 102px;
+    line-height: 33px;
+    text-align: center;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.textPhoneHelp{
+    float: right;
+    width: 320px;
+    height: 70px;
+    margin-top: 15px;
+    background: url('../images/texts.png') no-repeat -2px -65px;
+}
+.textJoinLogo{
+    float: left;
+    width: 160px;
+    height: 55px;
+    margin: 65px auto 15px 380px;
+    background: url('../images/texts.png') no-repeat;
+}
+.textTeacherSuccess{
+    float: left;
+    width: 316px;
+    height: 50px;
+    margin: 65px auto 0 240px;
+    background: url('../images/texts.png') no-repeat -161px 0;
+}
+.textStudentSuccess{
+    float: left;
+    width: 370px;
+    height: 50px;
+    margin: 45px auto 15px 240px;
+    background: url('../images/texts.png') no-repeat -330px -64px;
+}
+.textNoMoreLess{
+    float: left;
+    width: 191px;
+    height: 50px;
+    margin: 82px auto 15px 360px;
+    background: url('../images/texts.png') no-repeat -464px -117px;
+}
+.selectInput li, .selectInput li.clearfix{
+    color: #000;
+    font-size: 13px;
+    line-height: 35px;
+    margin: 0 0 8px 0;
+}
+.selectInput li ul{
+    float: left;
+    border: 1px solid #a0a0a0;
+    width: 400px;
+}
+.selectInput li ul li{
+    float: left;
+    color: #888888;
+    padding: 3px 6px;
+    margin: 6px;
+    line-height: 13px;
+    cursor: pointer;
+}
+.selectInput li ul li.active{
+    color: #ffffff;
+    background-color: #a0d500;
+}
+.selectInput div{
+    float: left;
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+.popupInInput{
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    float: left;
+    z-index: 100;
+    display: none;
+}
+
+.generalForm{
+    font-size: 13px;
+}
+.generalForm li{
+    position: relative;
+    margin-bottom: 16px;
+}
+.generalForm li label{
+    width: 100px;
+    margin-left: -100px;
+    padding-right: 20px;
+    line-height: 30px;
+    text-align: right;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.generalForm li input{
+    width: 295px;
+    height: 30px;
+    color: #888888;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #aaaaaa;
+}
+.generalForm li input.hiddenFile{
+    position: absolute;
+    top: 0;
+    left: 24px;
+    filter:alpha(opacity:0);
+    opacity:0;
+}
+
+.clearStyle input {
+    width: auto !important;
+    height: auto !important;
+    margin: 5px !important;
+    padding: 0 !important;
+    line-height: 130% ;
+    text-align: center ;
+    border: none;
+}
+.clearStyle label{
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 130% ;
+    text-align: center ;
+    border: none;
+}

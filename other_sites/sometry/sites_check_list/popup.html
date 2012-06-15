@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>checklist</title>
+    <style>
+        html body { font-size: 13px; -webkit-transition: background-color 0.2s; padding: 10px;}
+        * { padding: 0; margin: 0; line-height: 150%; }
+        ul { width: 200px; list-style: none; padding:10px; } 
+        ul li { display: block; list-style-position: outside; margin-top: 5px; }
+        h1 { font-size: 14px; }
+        button { padding: 3px; margin: 3px; }
+        input[type='checkbox'] { margin-right: 5px;}
+    </style>
+</head>
+<body>
+    <p> 选择: <span id="checker"></span> </p>
+    <p> <button id="opener" >打开选中的地址</button> </p>
+    <p> 访问本地? <input type="checkbox" id="ac_local" /> <span id="status"></span> </p>
+    <ul></ul>
+</body>
+<script>
+    var protocol = 'http://';
+    var localfix = 'local.';
+    var siteslist = {
+        'Main Site': {
+            'XD': 'www.xd.com',
+            '密码': 'www.xd.com/change_password_ad',
+            '礼券': 'www.xd.com/liquan/shouji',
+            '合作': 'www.xd.com/cooperation',
+            '未成年': 'www.xd.com/fcm',
+            'BBS': 'bbs.xd.com'
+        },
+        'WP': {
+            '神仙道': 'sxd.xd.com',
+            '盛世三国': 'sg.xd.com',
+            '开天辟地': 'kt.xd.com',
+            '天地英雄': 'td.xd.com'
+        }
+    };
+
+    var types = {
+        'All':['*'],
+        '新UI': ['XD','BBS'],
+        '黑头': ['密码','礼券','合作','神仙道','盛世三国','开天辟地','天地英雄'],
+        '四个官网': ['神仙道', '盛世三国', '开天辟地', '天地英雄']
+    }
+
+    var ul = document.getElementsByTagName('ul')[0];
+    var checker = document.getElementById('checker');
+    var opener = document.getElementById('opener');
+
+    //加链接
+    for( cat in siteslist ){
+        var li_c = document.createElement('li');
+        var h1 = document.createElement('h1');
+        var ul_s = document.createElement('ul');
+        h1.innerText = cat;
+        for( name in siteslist[cat] ){
+            var li_s = document.createElement('li');
+            li_s.innerHTML = '<label><input type="checkbox" class="checklink" id="'+name+'"> '+name+' <a target="_blank" href="'+ protocol + siteslist[cat][name] +'">go></a> </label>';
+            ul_s.appendChild(li_s);
+        }
+        li_c.appendChild(h1);
+        li_c.appendChild(ul_s);
+        ul.appendChild(li_c);
+    }
+
+    //加入type
+    var checkboxes = document.querySelectorAll('input[type=checkbox].checklink');
+    for( type in types ){
+        var bn = document.createElement('button');
+        bn.innerText = type;
+        bn.id = 'open_'+type;
+        bn.onclick = function(){
+            var type = this.innerText;
+            var keys = types[type];
+            if(type == 'All'){
+                for( var i=0; i<checkboxes.length; i++ ){
+                    checkboxes[i].checked = true;
+                }
+                return;
+            }
+            for( var i=0; i<checkboxes.length; i++ ){
+                checkboxes[i].checked = false;
+            }
+            for( var i=0; i<keys.length; i++ ){
+                document.querySelector('input[type=checkbox]#'+ keys[i]).checked = true;
+            }
+        }
+        checker.appendChild(bn);
+    }
+
+    opener.onclick = function(){
+        var checkboxes = document.querySelectorAll('input.checklink:checked');
+        for( var i=0; i<checkboxes.length; i++ ){
+            chrome.tabs.create({ url: checkboxes[i].parentNode.querySelector('a').href });
+        }
+    }
+
+    //改local
+    var ac_local = document.getElementById('ac_local');
+    ac_local.onchange = function() {
+        var is_checked = this.checked;
+        var links = document.getElementsByTagName('a');
+        for( var i=0; i<links.length; i++ ){
+            if(is_checked){
+                links[i].href = links[i].href.replace(protocol, protocol+localfix);
+            }else{
+                links[i].href = links[i].href.replace(protocol+localfix, protocol);
+            }
+        }
+        document.body.style.backgroundColor = '#ff6600';
+        window.setTimeout(function(){ document.body.style.backgroundColor = '#ffffff'; }, 200);
+    }
+</script>
+</html>

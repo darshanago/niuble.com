@@ -1,0 +1,529 @@
+/*
+Theme Name: NiuB Le
+Theme URI: http://www.niuble.com
+Author: Eric Dum 代立晨
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+*/
+
+/* Global Styles */
+.clearfix:after {
+    clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+ul.clearfix li { float: left; }
+.clearfix {height: 100%;}
+* html .clearfix { height: 1%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    font: inherit;
+	vertical-align: baseline;
+}
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, 
+dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, input, select,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    box-sizing:content-box;
+    -o-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -icab-box-sizing:content-box;
+    -khtml-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+    overflow-y:scroll;
+	overflow-x:hidden;
+}
+body {
+	font:12px/1.8 Arial,sans-serif;
+	/*防止横向滚动条*/
+	overflow-x:hidden;
+    overflow-y:hidden;
+	color:#333333;
+    background: #fff;
+    line-height: 1;
+}
+select{
+    border: 1px solid #dadada;
+    font-size: 12px;
+    color: #333;
+    line-height; 12px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table, tr, td{
+    border: 1px solid silver;
+    padding: 3px;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+    color: inherit;
+	text-decoration:none;
+}
+span{
+	color:inherit;
+}
+a:hover {
+    color: inherit;
+	text-decoration:none;
+}
+a img{
+    vertical-align: middle;
+}
+
+label[for]{
+    cursor: pointer;
+}
+
+
+/***************************** END OF RESET *********************************/
+/***************************** COMMON BEGIN *********************************/
+
+.floatLeft{ float: left !important; }
+.floatRight{ float: right !important; }
+.textLeft{ text-align: left; }
+.textRight{ text-align: right; }
+.textCenter{ text-align: center; }
+.bold{ font-weight: bold; }
+.relative{ position: relative; }
+.absolute{ position: absolute; }
+.displayNone{ display: none; }
+.iBlock{ display: inline-block; *display: inline; *zoom: 1; }
+
+.blockCenter{ margin-left:auto; margin-right:auto; }
+ul.hideText li{ text-indent:-99999px; }
+.noBg{ background: none !important; }
+
+.noBorder{border:none !important;}
+.noBorderLeft{border-left:none !important;}
+.noBorderRight{border-right:none !important;}
+.noBorderTop{border-top:none !important;}
+.noBorderBottom{border-bottom:none !important;}
+
+.noMargin{margin:0 !important;}
+.noMarginLeft{margin-left:0 !important;}
+.noMarginRight{margin-right:0 !important;}
+.noMarginTop{margin-top:0 !important;}
+.noMarginBottom{margin-bottom:0 !important;}
+
+.noPadding{padding:0 !important;}
+.noPaddingLeft{padding-left:0 !important;}
+.noPaddingRight{padding-right:0 !important;}
+.noPaddingTop{padding-top:0 !important;}
+.noPaddingBottom{padding-bottom:0 !important;}
+
+.fontSize12 {font-size:12px !important;}
+.fontSize14 {font-size:14px !important;}
+.fontSize16 {font-size:16px !important;}
+.fontSize18 {font-size:18px !important;}
+.marginAuto {margin:auto !important;}
+.marginBottom0 {margin-bottom:0px !important;}
+.marginBottom5 {margin-bottom:5px !important;}
+.marginBottom10 {margin-bottom:10px !important;}
+.marginBottom15 {margin-bottom:15px !important;}
+.marginBottom20 {margin-bottom:20px !important;}
+.marginBottom30 {margin-bottom:30px !important;}
+.marginBottom40 {margin-bottom:40px !important;}
+.marginTop0 {margin-top:0px !important;}
+.marginTop5 {margin-top:5px !important;}
+.marginTop10 {margin-top:10px !important;}
+.marginTop15 {margin-top:15px !important;}
+.marginTop20 {margin-top:20px !important;}
+.marginTop30 {margin-top:30px !important;}
+.marginTop40 {margin-top:40px !important;}
+.marginLeft0 {margin-left:0px !important;}
+.marginLeft5 {margin-left:5px !important;}
+.marginLeft10 {margin-left:10px !important;}
+.marginLeft15 {margin-left:15px !important;}
+.marginLeft20 {margin-left:20px !important;}
+.marginLeft30 {margin-left:30px !important;}
+.marginLeft40 {margin-left:40px !important;}
+.marginRight0 {margin-right:0px !important;}
+.marginRight5 {margin-right:5px !important;}
+.marginRight10 {margin-right:10px !important;}
+.marginRight15 {margin-right:15px !important;}
+.marginRight20 {margin-right:20px !important;}
+.marginRight30 {margin-right:30px !important;}
+.marginRight40 {margin-right:40px !important;}
+.margin0 {margin:0px !important;}
+.margin5 {margin:5px}
+.margin10 {margin:10px}
+.margin15 {margin:15px}
+.margin20 {margin:20px}
+.margin30 {margin:30px}
+.margin40 {margin:40px}
+.marginTop-5 {margin-top:-5px !important;}
+.marginTop-10 {margin-top:-10px !important;}
+.marginTop-15 {margin-top:-15px !important;}
+
+/** --- paddings --- **/
+.paddingAuto {padding:auto !important;}
+.paddingBottom0 {padding-bottom:0px !important;}
+.paddingBottom5 {padding-bottom:5px !important;}
+.paddingBottom10 {padding-bottom:10px !important;}
+.paddingBottom15 {padding-bottom:15px !important;}
+.paddingBottom20 {padding-bottom:20px !important;}
+.paddingBottom30 {padding-bottom:30px !important;}
+.paddingBottom40 {padding-bottom:40px !important;}
+.paddingTop0 {padding-top:0px !important;}
+.paddingTop5 {padding-top:5px !important;}
+.paddingTop10 {padding-top:10px !important;}
+.paddingTop15 {padding-top:15px !important;}
+.paddingTop20 {padding-top:20px !important;}
+.paddingTop30 {padding-top:30px !important;}
+.paddingTop40 {padding-top:40px !important;}
+.paddingLeft0 {padding-left:0px !important;}
+.paddingLeft5 {padding-left:5px !important;}
+.paddingLeft10 {padding-left:10px !important;}
+.paddingLeft15 {padding-left:15px !important;}
+.paddingLeft20 {padding-left:20px !important;}
+.paddingLeft30 {padding-left:30px !important;}
+.paddingLeft40 {padding-left:40px !important;}
+.paddingRight0 {padding-right:0px !important;}
+.paddingRight5 {padding-right:5px !important;}
+.paddingRight10 {padding-right:10px !important;}
+.paddingRight15 {padding-right:15px !important;}
+.paddingRight20 {padding-right:20px !important;}
+.paddingRight30 {padding-right:30px !important;}
+.paddingRight40 {padding-right:40px !important;}
+.padding0 {padding:0px !important;}
+.padding5 {padding:5px}
+.padding10 {padding:10px}
+.padding15 {padding:15px}
+.padding20 {padding:20px}
+.padding30 {padding:30px}
+.padding40 {padding:40px}
+.paddingTop-5 {padding-top:-5px !important;}
+.paddingTop-10 {padding-top:-10px !important;}
+.paddingTop-15 {padding-top:-15px !important;}
+
+.w160{width:160px;}
+.w230{width:230px;}
+.w260{width:260px;}
+.w470{width:470px;}
+.w710{width:710px;}
+.w790{width:790px;}
+
+/* 
+ * 规定黑、白、第一灰度、第二灰度、最小灰度
+ * 规定主色、第一辅色、第二辅色
+ * 命名为 名称+'Color' 或 名称+'Bg'
+ *
+ * 分别命名为：blank, white, firstGray, secondGray, lastGray
+ *             primary, firstAssist, secondAssist
+ */
+.blankColor{ color: #333333; }
+.whiteColor{ color: #ffffff; }
+.blankBg{ background-color: #333333; }
+.whiteBg{ background-color: #ffffff; }
+
+.firstGrayColor{ color: #666666; }
+.secondGrayColor{ color: #888888; }
+.middleGrayColor{ color: #dadada; }
+.lastGrayColor{ color: #cccccc; }
+.firstGrayBg{ background-color: #666666; }
+.secondGrayBg{ background-color: #888888; }
+.middleGrayBg{ background-color: #dadada; }
+.lastGrayBg{ background-color: #cccccc; }
+
+/*背景部分*/
+.primaryColor{ color: #3399cc; }
+.firstAssistColor{ color: #ed1c24; }
+.secondAssistColor{ color: #ffd700; }
+.primaryBg{ background-color: #ff6600; }
+.firstAssistBg{ background-color: #ed1c24; }
+.secondAssistBg{ background-color: #ffd700; }
+
+
+.basicBorder{border:1px solid #dadada;}
+/* 颜色定义结束 */
+
+/*********************************  NIU  BI  LE ************************************
+ *
+ *
+ *
+ *
+ */
+body{
+    min-width: 900px;
+}
+::selection {
+    background: #04396c;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #04396c;
+    color: #fff;
+}
+
+::-webkit-selection {
+    background: #04396c;
+    color: #fff;
+}
+
+.nb_block{
+    float: left;
+    color: #fff;
+    background: #408ad2;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+    line-height: 36px;
+    font-family: Microsoft Yahei;
+}
+.nb_block:hover {
+    background: #FFB140;
+}
+
+header{
+    position:relative;
+}
+header h1#site-title{
+    margin: 0 10px 0 0;
+    font-size: 40px;
+    line-height: 40px;
+    background: #04396c;
+    margin-left: 5%;
+}
+header h1#site-title:hover {
+    background: #04396c;
+}
+#mainLoader{
+    width: 100%;
+    height: 5px;
+    background: #FFB140;
+}
+.loader_bar{
+    float:right;
+    width: 0%;
+    height: 5px;
+    background: #04396c;
+}
+#mainLoader.loaded .loader_bar{
+    width: 100%;
+    -moz-transition: width 2s linear;
+    -webkit-transition: width 2s linear;
+}
+
+nav#primaryNav{
+    position: absolute;
+    right:20%;
+    bottom: 0;
+    font-family: Microsoft Yahei;
+}
+nav#primaryNav ul#menu-primary li a{
+    color: #fff;
+    background: #0c5aa6;
+    padding: 10px;
+    font-size: 24px;
+    line-height: 24px;
+    cursor: pointer;
+    display: inline-block;
+}
+nav#primaryNav ul#menu-primary li:nth-child(odd) a{
+    background: #408ad2;
+}
+nav#primaryNav ul#menu-primary li a:hover,
+nav#primaryNav ul#menu-primary li.current-menu-item a{
+    background: #FFB140;
+}
+nav#primaryNav ul#menu-primary li a{
+    color: #fff;
+}
+
+#mainLayout{
+    width: 90%;
+    margin: 10px auto;
+    background: #fff;
+}
+
+article.index_content{
+    float: left;
+}
+article.index_content .entry-cat{
+    float:left;
+    background: #d3e1fb;
+    color: #666;
+    font-size: 20px;
+    margin-left: 0;
+}
+article.index_content .entry-title{
+    margin-right: 0;
+}
+
+
+.date_septation{
+    background: #04396c;
+}
+.comment_number{
+    background: #04396c;
+    display: inline-block;
+    margin:0 0 10px;
+}
+.comment_number_add{
+    background: #d3e1fb;
+}
+.comment_number_add:hover {
+    background: #d3e1fb;
+}
+.comment_number:hover,
+.date_septation:hover {
+    background: #04396c;
+}
+
+
+/******** 正文 **********/
+article.index_content.single{
+    float: none;
+}
+article.single section{
+    float: left;
+    width: 65%;
+    color: #333;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 10px;
+    /*
+    margin: 20px 0;
+    border-top: 5px solid #04396c;
+    */
+}
+article.single section p{
+    margin: 8px 0;
+}
+article.single section.entry-content a{
+    color: #04396c;
+}
+article.single section.entry-content a:hover {
+    color: #ffb140;
+}
+
+/******* 评论 ********/
+article.single aside{
+    margin: 20px 0;
+    float: right;
+    width: 30%;
+}
+article.single aside article{
+    margin-bottom: 10px;
+}
+article.single aside .comment-author div{
+    padding: 5px;
+    background: #d3e1fb;
+    color: #888;
+}
+article.single aside .comment-author .reply{
+    padding: 5px;
+    background: #04396c;
+    color: #fff;
+}
+article.single aside .comment-content{
+    padding: 10px;
+    background: #d3e1fb;
+    border-top: 1px solid #04396c;
+}
+article.single aside .comment-awaiting-moderation{
+    padding: 5px;
+    background: #ffb140;
+}
+
+/******* 评论框 ****/
+article.single aside #respond{
+}
+article.single aside #respond #reply-title{
+    display: none;
+}
+article.single aside #respond p{
+    margin: 10px 0;
+}
+article.single aside #respond p.comment-form-author,
+article.single aside #respond p.comment-form-email,
+article.single aside #respond p.comment-form-url{
+    position: relative;
+    line-height: 30px;
+}
+article.single aside #respond p.comment-form-author input,
+article.single aside #respond p.comment-form-email input,
+article.single aside #respond p.comment-form-url input{
+    position: absolute;
+    left: 65px;
+    width: 240px;
+}
+article.single aside #respond p.form-allowed-tags{
+    display: none;
+}
+article.single aside #respond p.form-submit #submit{
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    background: #04396c;
+}
+article.single aside #respond textarea{
+    width: 100%;
+    margin-top:5px;
+    border: 1px solid #04396c;
+    display: block;
+}
+input{
+    border: 1px solid #04396c;
+    padding: 6px 5px;
+    font-size: 12px;
+    line-height: 12px;
+    background: #ffffff;
+}
+.required{
+    color: #ffb140;
+}

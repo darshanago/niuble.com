@@ -1,0 +1,843 @@
+#MainWrapper{
+    background: url('../images/footer.png') bottom center no-repeat;
+}
+
+#header{
+    height: 123px;
+}
+
+#logo{
+    margin: 10px 20px 0px 20px;
+}
+
+#slogan{
+    margin-top: 80px;
+}
+
+.contact400{
+    margin-top: 95px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.centerLayout{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.mainMarquee{
+    float: left;
+    width: 960px;
+    margin-left: 5px;
+    height: 400px;
+    overflow: hidden;
+    margin-top:-7px;
+    margin-bottom:-2px;
+}
+
+.mainMarquee .slider{
+    height: 9999px;
+    width: 950px;
+}
+.mainMarquee .slider .item{
+    width: 950px;
+    height: 400px;
+}
+.glassBodyTop{
+    width: 960px;
+    height: 9px;
+    background: url('../images/body_top.png') no-repeat;
+}
+.glassBodyBottom{
+    width: 960px;
+    height: 9px;
+    background: url('../images/body_bottom.png') no-repeat;
+}
+.glassBody{
+    width: 960px;
+    background: url('../images/body.png') repeat-y;
+}
+
+.marqueeSwitcher{
+    float: right;
+    z-index: 10;
+    margin-right: -20px;
+    margin-top: 290px;
+}
+.marqueeSwitcher li{
+    margin-top: 10px;
+}
+.marqueeSwitcher a{
+    width: 15px;
+    height: 14px;
+    display: block;
+    overflow: hidden;
+    text-indent: 1000px;
+    background: url('../images/additions.png') 0px -15px;
+}
+.marqueeSwitcher a.active{
+    background-position: 0px 0px;
+}
+
+.leftDirection{
+    float: left;
+    margin-top: 30px;
+    width: 220px;
+    margin-right: -220px;
+    z-index: 10;
+}
+
+.clampButton div{
+    position: relative;
+    width: 220px;
+    height: 65px;
+    line-height: 56px;
+    padding-left: 25px;
+    margin-left: -15px;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: url('../images/buttons.png') no-repeat;
+    z-index: 10;
+}
+.clampButton{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.serviceNav{
+    height: 38px;
+    margin-top: -32px;
+    margin-left: 220px;
+    line-height: 28px;
+}
+
+.serviceNav li{
+    float: left;
+    width: 134px;
+    height: 38px;
+    margin-right: 10px;
+    padding-left: 10px;
+    color: #fff;
+    background: url('../images/buttons.png') 0px -94px no-repeat;
+    cursor: pointer;
+}
+.serviceNav li a{
+    color: #fff;
+}
+.serviceNav li.active{
+    background: url('../images/buttons.png') -144px -94px no-repeat;
+}
+
+.serviceInfo{
+    margin-left: 220px;
+}
+
+.serviceInfo .leftImage{
+    position: relative;
+    float: left;
+    margin-top: -65px;
+    margin-left: -220px;
+    width: 210px;
+    height: 260px;
+    background: url('../images/tool1.png') no-repeat;
+}
+
+.serviceInfo h1.serviceTitle{
+    margin-top: 30px;
+    line-height: 130%;
+    font-size: 26px;
+}
+.serviceMore{
+    margin-top: 20px;
+    width: 125px;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    background: url('../images/buttons.png') 1px -160px no-repeat;
+}
+.serviceMore a{
+    line-height: 35px;
+    height: 35px;
+    padding: 9px 30px;
+    text-decoration: none;
+}
+
+.serviceInfo .tabItem{
+    display: none;
+}
+.serviceInfo .active.tabItem{
+    display: block;
+}
+
+#footer{
+    margin: 20px 0;
+    border-top: 2px solid #000;
+    padding-top: 3px;
+    color: #999;
+}
+
+/* 首页最上面的用户控制面板 */
+.topUserControll{
+    position: relative;
+    margin-top: -98px;
+    margin-bottom: -30px;
+}
+.topUserControll .ucWrapper{
+    background: #78ad25;
+    height: 90px;
+    padding-top: 18px;
+    color: #fff;
+}
+.topUserControll .ucWrapper a{
+    color: #fff;
+    text-decoration: none;
+}
+.topUserControll .ucWrapper .ucLogo{
+    margin-left: 35px;
+}
+.topUserControll .ucWrapper .ucPanel{
+    margin-left: 140px;
+}
+.topUserControll .ucWrapper .ucPanel ul li{
+    position: relative;
+    float: left;
+    margin-right: 15px;
+}
+.topUserControll .ucWrapper .ucPanel ul li p{
+    margin-top: 10px;
+}
+.topUserControll .ucWrapper .ucPanel ul li .textInput{
+    width: 268px;
+    height: 28px;
+    padding: 0 5px;
+    margin: 0;
+    color: #666;
+    border: 1px solid #111;
+}
+.topUserControll .ucWrapper .ucPanel ul li .placeHolder{
+    position: absolute;
+    color: #666;
+    height: 28px;
+    line-height: 28px;
+    top: 1px;
+    left: 7px;
+    white-space: nowrap;
+    display: block;
+    cursor: text;
+    z-index: 10;
+}
+.topUserControll .ucWrapper .ucPanel ul li .greenButton{
+    height: 30px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 6px 10px;
+}
+.topUserControll .ucLabel ul li{
+    background: #eee;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+.topUserControll .ucLabel ul li a{
+    line-height: 30px;
+}
+.topUserControll .ucLabel ul li.switcher{
+    background: #78ad25;
+    display: none;
+}
+.topUserControll .ucLabel ul li.switcher.active{
+    display: block;
+}
+.topUserControll .ucLabel ul li.switcher a{
+    background: #78ad25;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+/**
+ *
+ * Navigation Bar
+ *
+ */
+.navigationBar{
+    padding: 2px;
+    line-height: 32px;
+    background-color: #78ad25;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.navigationBar span, .navMessage a{
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    font-size: 13px;
+}
+.navMessage{
+    margin: 2px 10px 2px 50px;
+}
+
+/**
+ * register Page
+ */
+.registerContainer .registerLayout{
+    padding:5px 22px;
+}
+.registerPrimaryNav{
+    padding: 20px 50px 10px 50px;
+}
+.registerPrimaryNav .studentBanner{
+    float: left;
+    width: 440px;
+    height: 36px;
+    background: url('../images/texts.png') -5px -135px;
+}
+.registerPrimaryNav .controller{
+    float: right;
+}
+.registerPrimaryNav .controller li{
+    float: left;
+    width: 25px;
+    height: 24px;
+    margin-right: 55px;
+    overflow: hidden;
+    text-indent: 1000px;
+    background: url('../images/additions.png') -15px -26px;
+    cursor: pointer;
+}
+.registerPrimaryNav .controller li.active{
+    background: url('../images/additions.png') -15px -1px;
+}
+.registerSecNav{
+    border-bottom: 1px solid #c6c5c5;
+}
+.rsNavContainer{
+    position: relative;
+    width: auto;
+    height: 10px;
+    border: 1px solid #ffffff;
+    background-color: #cbcbcb;
+    cursor: pointer;
+}
+.rsSplitLine{
+    float: left;
+    position: absolute;
+    left: 459px;
+    width: 1px;
+    height: 10px;
+    background-color: #ffffff;
+    z-index: 10;
+}
+.rsNavContainer .controller{
+    position: relative;
+    height: 10px;
+    width:459px;
+    background-color: #a0d500;
+    cursor: default;
+}
+.rsNavContainer .iterator{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 14px;
+    height: 11px;
+    background: url('../images/additions.png') 0 -29px;
+}
+#registerStep1{
+    width: 920px;
+    overflow: hidden;
+}
+#registerStep11, #registerStep12{
+    float: left;
+    width: 920px;
+}
+#registerForm1{
+    margin: 15px 0 10px;
+    line-height: 24px;
+}
+#registerForm1 label{
+    margin-right: 15px;
+}
+.teacherSearchForm{
+    float: left;
+    width: 520px;
+}
+.teacherSearchForm li{
+    line-height: 30px;
+    margin-top: 10px;
+}
+.teacherSearchForm .inputer{
+    position: relative;
+    float: right;
+    width: 420px;
+    height: 30px;
+    padding: 0 9px;
+    border: 1px solid #a0a0a0;
+    color: #a0a0a0;
+}
+.teacherSearchForm .inputer.text{
+    cursor: text;
+}
+.teacherSearchForm .inputer span{
+    margin-right: 30px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+.teacherSearchForm .inputer span.active{
+    color: #ffffff;
+    background-color: #a0d500;
+}
+.teacherSearchForm .inputer span input{
+    width: 20px;
+    border: 1px solid #999;
+}
+.teachList{
+    width: auto;
+    margin-top: 18px;
+}
+.teachList li{
+    position: relative;
+    float: left;
+    width: 164px;
+    height: 164px;
+    margin: 15px 22px 0 0;
+    border: 1px solid #fff;
+    overflow: hidden;
+    cursor: pointer;
+}
+.teachList li.last{
+    margin-right: 0px;
+}
+.teachBlackInfo{
+    position: relative;
+    width: 142px;
+    height: 164px;
+    margin: -45px auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3a3a3a;
+    filter: alpha(opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+}
+.teachBlackInfo .name{
+    margin-right: 10px;
+}
+.teachBlackInfo .title{
+    color: #a0d500;
+}
+.teachBlackInfo .basic{
+    margin-top: 10px;
+}
+.teachList li .selected{
+    position: absolute;
+    float: left;
+    top: 5px;
+    left: 140px;
+    width: 21px;
+    height: 21px;
+    background: url('../images/additions.png') -19px -50px;
+    z-index: 10;
+}
+.jumpToSignup{
+    float: left;
+    width: 280px;
+    padding: 60px;
+    font-size: 19px;
+    line-height: 24px;
+    color: #888888;
+    font: 宋体;
+}
+.jumpToSignup a{
+    font-size: 19px;
+    font: 宋体;
+    color: #a0d500;
+}
+
+
+/**
+ * HC Map's
+ *
+ */
+.mapContainer{
+    width: 916px;
+    height: 400px;
+    overflow: hidden;
+    margin: 10px auto;
+    padding: 0px;
+    background: url('../images/map.png');
+    border: 2px solid #fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.hcRow, .hcEvenRow{
+    width:1500px;
+}
+.hcEvenRow{
+    margin-left: -18px;
+}
+.hcUnit{
+    float: left;
+    width: 36px;
+    height: 42px;
+    margin-top: -9px;
+    background: url('../images/honeycomb.png') no-repeat;
+    background-position: -3px -48px;
+}
+.hcArea{
+    background-position: -1px -2px;
+    cursor: pointer;
+}
+.hcArea.active, .hcArea.hoveractive{
+    background-position: -39px -2px;
+}
+
+#registerStep2 .title{
+    width: 100%;
+}
+#registerStep1 .generalForm{
+    margin-left: 330px;
+}
+#registerStep2 .studentForm .generalForm{
+    margin-left: 260px;
+}
+#registerStep1 .generalForm li .formContent{
+    font-size: 15px;
+}
+#registerStep1 .generalForm li .selectedCity{
+    color: #2d5c00;
+    font-weight: bold;
+}
+#registerStep1 .generalForm li .nextStep{
+    width: 215px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.teacherSuccess .tips, 
+.studentSuccess .tips {
+    position: relative;
+    margin-bottom: 60px;
+}
+.teacherSuccess .tips .interator{
+    position: absolute;
+    float: left;
+    left: 550px;
+    top: -15px;
+    width: 27px;
+    height: 15px;
+    background: url('../images/additions.png') no-repeat -13px -73px;
+}
+.studentSuccess .tips .interator{
+    position: absolute;
+    float: left;
+    left: 600px;
+    top: -15px;
+    width: 27px;
+    height: 15px;
+    background: url('../images/additions.png') no-repeat -13px -73px;
+}
+.teacherSuccess .tips ul{
+    width: 370px;
+    margin: 0 auto;
+    padding: 25px 20px 1px 40px;
+    font-size: 17px;
+    line-height: 22px;
+    color: #ffffff;
+    list-style: url('../images/icon_tips.png') outside;
+    background-color: #78ad25;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+.studentSuccess .tips ul{
+    width: 570px;
+    margin: 0 auto;
+    padding: 25px 20px 1px 40px;
+    font-size: 17px;
+    line-height: 22px;
+    color: #ffffff;
+    list-style: url('../images/icon_tips.png') outside;
+    background-color: #78ad25;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+.teacherSuccess .tips ul li,
+.studentSuccess .tips ul li{
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.popupClass .classLayout{
+    width: 530px;
+    padding: 5px 15px 15px 15px;
+    background-color: #eeeeee;
+    border: 1px solid #a0a0a0;
+}
+.popupClass .classLayout .classHead li{
+    float: left;
+}
+.popupClass .classLayout .classHead .active,
+.popupClass .classLayout .classBody{
+    background-color: #ffffff;
+}
+.popupClass .classLayout .classBody{
+    padding: 0px 10px 10px 10px;
+    display: none;
+}
+.popupClass .classLayout .classHead li{
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+.popupClass .classLayout .classBody .clearfix div{
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+.popupClass .classLayout .classBody li.clearfix{
+    font-size: 13px;
+    line-height: 35px;
+    margin-bottom: 8px;
+}
+.popupClass .classLayout .classBody li.clearfix ul{
+    display: none;
+    width: 428px;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory{
+    margin-bottom: 0;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory ul{
+    width: 430px;
+    background: #ffffff url('../images/classCat.png') repeat-x 0 34px;
+    border: none;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory li{
+    padding: 0px 7px;
+    margin: 0px;
+    line-height: 35px;
+}
+.popupClass .classLayout .classBody li.clearfix.classCategory li.active{
+    color: #a0d500;
+    background: #ffffff url('../images/classCatIterator.png') no-repeat center 23px;
+    border: none;
+}
+.popupClass .classLayout .classBody li.clearfix.classSubject ul{
+    border-top: none;
+    border-left: 1px solid #a0d500;
+    border-right: 1px solid #a0d500;
+    border-bottom: 1px solid #a0d500;
+}
+.popupClass .classLayout .classControll .bnConfirm{
+    padding: 0 72px;
+    line-height: 28px;
+    margin: 10px 0 0 90px;
+}
+.popupTeacher .teacherLayout{
+    width: 420px;
+    border: 1px solid #a0a0a0;
+    background-color: #eeeeee;
+    padding: 20px 10px 10px 10px;
+}
+.popupTeacher .teacherLayout .selectInput li ul{
+    width: 320px;
+}
+.popupTeacher .teacherLayout .bnConfirm{
+    margin-left: 80px;
+    line-height: 28px;
+}
+.popupSchedule .scheduleLayout{
+    width: 420px;
+    border: 1px solid #a0a0a0;
+    background-color: #eeeeee;
+    padding: 15px 10px 10px 10px;
+}
+.popupSchedule .scheduleLayout table{
+    border-top: 1px solid #000;
+}
+.popupSchedule .scheduleLayout table tr{
+    border-bottom: 1px solid #000;
+}
+.popupSchedule .scheduleLayout table td{
+    border-left: 1px solid #000;
+    padding: 2px;
+    text-align: center;
+}
+.popupSchedule .scheduleLayout table tbody td{
+    cursor: pointer;
+}
+.popupSchedule .scheduleLayout table tbody td.active{
+    background-color: #a0d500;
+}
+.popupSchedule .scheduleLayout table td.first{
+    border-left: none;
+    line-height: 18px;
+    cursor: default;
+}
+.popupSchedule .scheduleLayout .bnConfirm{
+    margin: 10px auto 0 135px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.studentForm .title{
+    margin-left: 110px;
+    margin-bottom: 10px;
+    line-height: 27px;
+    font-size: 18px;
+    color: #2d5c00;
+}
+.studentForm .title span{
+    padding: 4px 20px 5px 10px;
+    line-height: 28px;
+    margin-right: 20px;
+    color: white;
+    background: url('../images/additions.png') no-repeat 0 -88px;
+}
+.studentForm .teacherSelectedConfirm li{
+    float: left;
+    margin: 8px;
+}
+.studentForm .submit{
+    width: 225px;
+}
+#teacherRegisterStep2{
+    margin: 10px 60px;
+}
+.greenTags li{
+    float: left;
+}
+.flexableForm li .title{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 27px;
+    margin: 10px 0;
+    padding-left: 30px;
+    background: url('../images/dott.png') repeat-x 0 14px;
+}
+.flexableForm li .title .againstDott{
+    margin-left: -30px;
+    padding-left: 30px;
+    background: url('../images/dott_against.png') repeat-x 0 14px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.flexableForm li .title .openclose{
+    line-height: 27px;
+    height: 27px;
+    margin-left: -30px;
+    padding-left: 30px;
+    padding-right: 10px;
+    background: url('../images/additions.png') no-repeat 0 -143px;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.flexableForm li ul{
+    font-size: 13px;
+    margin-left: 125px;
+    display: none;
+    color: #888888;
+}
+.flexableForm li ul input{
+    color: #888888;
+}
+.flexableForm li ul label{
+    margin-left: 3px;
+    color: #888888;
+}
+.flexableForm li ul select{
+    padding: 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #a0a0a0;
+    background: white;
+    color: #888888;
+}
+.flexableForm li ul li .inputer1, .flexableForm li ul li .inputer2{
+    width: 185px;
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid #a0a0a0;
+}
+.flexableForm li ul li .inputer2{
+    width: 400px;
+}
+.flexableForm li ul li{
+    height: 40px;
+    line-height: 30px;
+}
+.flexableForm li.active ul{
+    display: block;
+}
+.flexableForm li.active .title .openclose{
+    cursor: default;
+}
+.flexableForm li.active .title .openclose{
+    background-position: 0 -170px;
+}
+.required:before {
+    content: '*';
+    color: red;
+    padding: 0 2px 0 10px;
+}
+.greenTags{
+    height: 50px;
+    width: 120%;
+    line-height: 40px;
+    font-size: 21px;
+    color: #2d5c00;
+}
+.greenTags li{
+    position: relative;
+    padding: 0 8px;
+    margin: 0 18px;
+    cursor: pointer;
+}
+.greenTags li.active{
+    color: #fff;
+    text-align: center;
+    background-color: #a0d500;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    text-shadow: #92c200 0 1px;
+    -webkit-text-shadow: #92c200 0 1px;
+    -moz-text-shadow: #92c200 0 1px;
+    -o-text-shadow: #92c200 0 1px;
+}
+.greenTags .iterator{ display: none; }
+.greenTags .active .iterator {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    background: url('../images/additions.png') no-repeat center -200px;
+}
+#registerStep3 .generalForm{
+    margin-left: 310px;
+    margin-bottom: 120px;
+}
+#registerStep3 .generalForm .browse{
+    padding: 12px 5px;
+    font-size: 13px;
+    color: #2d5c00;
+    line-height: 36px;
+    background: url('../images/buttons.png') no-repeat -227px -157px;
+}
+#registerStep3 .generalForm .Button40{
+    width: 70px;
+}
