@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form id="login" onsubmit="return false;">
+        <section>
+            <ul class="selector clearfix">
+                <li class="selected">员工</li>
+                <li>管理员</li>
+            </ul>
+        </section>
+        <section id="loginbox" class="clearfix">
+            <div class="floatLeft">
+                <p><input type="input" name="name" placeHolder="中文姓名"/></p>
+                <p><input type="input" name="password" placeHolder="密码 —— 手机号"/></p>
+            </div>
+            <div class="floatLeft">
+                <input type="submit" value="登录"/>
+            </div>
+        </section>
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/login.js"></script>
+{% endblock %}

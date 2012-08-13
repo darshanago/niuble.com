@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <ul id="employee" class="floatLeft">
+        <li id="user_generator">
+            <input type="input" name="chinese" id="chinese" placeHolder="中文名"/>
+            <input type="input" name="english" id="english" placeHolder="英文名"/>
+            <input type="input" name="password" id="password" placeHolder="手机号"/>
+            <a class="checkbox checked" id="noon">午</a>
+            <a class="checkbox checked" id="dinner">晚</a>
+            <a class="checkbox" id="employee_generate">加上去</a>
+        </li>
+    </ul>
+    <ul class="displayNone">
+        <li id="employeeNode">
+            <span class="chinese"><%=chinese%></span>
+            <span class="english"><%=english%></span>
+            <span class="password"><%=password%></span>
+            <a class="checkbox<%=options.noon?' checked':''%> noon">午</a>
+            <a class="checkbox<%=options.dinner?' checked':''%> dinner">晚</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/employee.js"></script>
+{% endblock %}
