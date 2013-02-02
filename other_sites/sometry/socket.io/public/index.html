@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <title>心动卡飞飞飞飞</title>
+        <style>
+            body{
+                font-family: sans-serif;
+            }
+            #gameLayout{
+                position: relative;
+                width: 802px;
+                margin: 20px auto;
+            }
+            #score{
+                position: absolute;
+                color: #fff;
+                font-size: 24px;
+                top: 20px;
+                left: 20px;
+                padding: 10px;
+                border-radius: 4px;
+                background: rgba(60,60,60,.6);
+                z-index: 2;
+            }
+            #goal{
+                position: absolute;
+                top: 80px;
+                left: 30px;
+                color: #f60;
+                font-size: 30px;
+                z-index: 2;
+                display: none;
+            }
+            #game{
+                position: relative;
+                width: 800px;
+                height: 600px;
+                border: 1px solid #333;
+            }
+
+            #room{
+                width: 780px;
+                border: 1px solid #333;
+                padding: 10px;
+            }
+            canvas{
+                background: url(/images/bg.jpg);
+                background-position: -111px -275px
+            }
+        </style>
+    </head>
+    <body>
+        <div id="login">
+            <input type="text" id="name" />
+            <input type="submit" id="join" />
+        </div>
+        <div id="container">
+            <div id="gameLayout">
+                <div id="score">
+                    <span class="current">0</span>
+                    /
+                    <span>21</span>
+                </div>
+                <div id="goal"></div>
+                <canvas id='game' width='800' height='600'></canvas>
+                <div id="room">
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <!--<script src="/js/quintus-all.min.js"></script>-->
+        <script src="/js/Quintus/lib/quintus.js"></script>
+        <script src="/js/Quintus/lib/quintus_2d.js"></script>
+        <script src="/js/Quintus/lib/quintus_input.js"></script>
+        <script src="/js/Quintus/lib/quintus_touch.js"></script>
+        <script src="/js/Quintus/lib/quintus_ui.js"></script>
+        <script src="/js/Quintus/lib/quintus_scenes.js"></script>
+        <script src="/js/Quintus/lib/quintus_sprites.js"></script>
+        <script src="/js/jquery-1.8.3.min.js"></script>
+        <script src="/js/game.js"></script>
+    </body>
+</html>

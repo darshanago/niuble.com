@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Cam</title>
+</head>
+<body>
+<div style="text-align:center">
+    <p>请允许我使用你的摄像头</p>
+    <video id="v" autoplay style="border:1px gray solid; width:320px;"></video>
+    <br />
+    <input type="text" />
+    <br />
+    <input type="button" value="进入游戏" />
+    <br />
+    <input type="button" value="截图" onclick="cpt()"/>
+    <br />
+    <img id="simg" style="" />
+</div>
+
+
+<script type="text/javascript">
+
+function cpt() {
+    var imgurl = cp();
+    document.getElementById('simg').src = imgurl;
+}
+
+function cp() {
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width  = video.videoWidth;
+    canvas.height = video.videoHeight;
+    ctx.drawImage(video, 0, 0);
+    return canvas.toDataURL("image/png");  
+}
+
+var video = document.getElementById('v');
+navigator.webkitGetUserMedia({video:true},
+        function(stream){
+            video.src = webkitURL.createObjectURL(stream);
+        },
+        function(error){
+            console.log("不支持媒体流～ ", error);
+        }
+);
+</script>
+</body>
+</html>
