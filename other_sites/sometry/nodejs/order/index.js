@@ -27,7 +27,7 @@ var application_root = __dirname,
     app.set('view engine', 'html');
     app.set('view options', { layout: false });
     app.set('views', views_root);
-    swig.init({ root: views_root, allowErrors: true });
+    swig.init({ root: views_root, allowErrors: true, autoescape:'js' });
 
     app.get(/^\/api\/(\w+)(?:\/(\d+))?$/i, function (req, res) {
         var api = require('./api'),
@@ -48,13 +48,14 @@ var application_root = __dirname,
         });
     });
 
-    app.post('/api/:model', function (req, res) {
+    app.delete('/api/:model/:id', function (req, res) {
         var api = require('./api');
 
-        api.methods( 'post', req.params.model, req.body, function( data ){
+        api.methods( 'delete', req.params.model, req.params.id, function( data ){
             res.send( data );
         });
     });
+
 
     var page = ['login', 'checkin', 'manage', 'order', 'employee'];
 

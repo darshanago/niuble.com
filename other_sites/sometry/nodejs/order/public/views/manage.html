@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div id="manage">
+        <p>
+            <a id="add" class="checkbox">+</a>
+        </p>
+        <div id="new">
+            <p>
+                开始日期：<input type="text" id="startDate" placeHolder="8-9" value=""/>
+                <input id="opt_noon" type="radio" class="type" name="type" value="noon" checked /><label for="opt_noon"> 午饭</label>
+                <input id="opt_dinner" type="radio" class="type" name="type" value="dinner" /><label for="opt_dinner"> 晚饭</label>
+            </p>
+            <ul id="calendar" class="clearfix">
+                <li>
+                    <ul class="day">
+                        <li id="label" class="checkbox">新增</li>
+                        <li class="checkbox">+</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clearfix">
+                <a class="checkbox">保存</a>
+            </div>
+        </div>
+    </div>
+    <ul class="displayNone">
+        <li id="employeeNode">
+            <span class="chinese"><%=chinese %></span>
+            <span class="english"><%=english %></span>
+            <span class="mobile"><%=mobile %></span>
+            <span class="department"><%=department %></span>
+            <a class="checkbox<%=options.noon?' checked':'' %> noon">午</a>
+            <a class="checkbox<%=options.dinner?' checked':'' %> dinner">晚</a>
+            <a class="checkbox remove">删除</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/menu.js"></script>
+{% endblock %}

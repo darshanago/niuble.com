@@ -13,7 +13,7 @@
 	height: 1%;
 }
 
-ul.clearfix li{
+ul.clearfix > li{
     float: left;
     display: block;
 }
@@ -221,7 +221,7 @@ input, .checkbox{
 input:hover {
     background: #f5f5f5;
 }
-input{
+input:not([type=radio,type=checkbox]) {
     width: 180px;
 }
 #employee span{
@@ -243,9 +243,17 @@ input{
     padding: 7px 15px 6px;
     cursor: pointer;
     background: #666;
+    display: inline-block;
+    *display: inline;
 }
 .checkbox.checked{
     background: #f60;
+}
+#employee a.checkbox.remove{
+    background: #dadada;
+}
+#employee a.checkbox.remove:hover{
+    background: red;
 }
 
 ul li input,
@@ -269,3 +277,20 @@ ul li .checkbox {
     cursor: pointer;
 }
 
+#manage #new{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #dadada;
+}
+#new > *{
+    margin-bottom: 10px;
+}
+#new li{
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+#startDate{
+    width: 50px;
+}
