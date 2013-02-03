@@ -1,10 +1,10 @@
 {
     "player":{
-        "sx":0,
-        "sy":107,
+        "sx":13,
+        "sy":124,
         "cols":1,
-        "tilew":68,
-        "tileh":82,
+        "tilew":42,
+        "tileh":51,
         "frames":1
     },
     "coin1":{
