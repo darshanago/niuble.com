@@ -13,7 +13,7 @@ app.configure(function () {
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-server.listen(80);
+server.listen(8889);
 
 app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');

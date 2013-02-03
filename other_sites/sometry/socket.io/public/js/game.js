@@ -13,9 +13,9 @@ var options = {
     interval: [3000, 2000], //掉落间隔
     gravity: [0, 0], //加速度区间
     vy: [200,100],//初速度区间
-    coin1: [1,2],
-    coin2: [3,4,5],
-    coin3: [6,7,8,9,10]
+    coin1: [1,2,3],
+    coin2: [4,5,6,7],
+    coin3: [7,8,9,10,11,12]
 }
 
 $('#coinRate').val('[10,30,60]');
@@ -24,9 +24,9 @@ $('#timesPerGate').val('5');
 $('#interval').val('[3000, 2000]');
 $('#gravity').val('[0, 0]');
 $('#vy').val('[200,100]');
-$('#coin1').val('[1,2]');
-$('#coin2').val('[3,4,5]');
-$('#coin3').val('[6,7,8,9,10]');
+$('#coin1').val('[1,2,3]');
+$('#coin2').val('[4,5,6,7]');
+$('#coin3').val('[7,8,9,10,11,12]');
 
 $('#coinRate, #coinsPerTime, #timesPerGate, #interval, #gravity, #vy, #coin1, #coin2, #coin3').change(function(){
     eval('options.'+this.id+'='+this.value);
