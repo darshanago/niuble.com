@@ -1,8 +1,9 @@
 var express = require('express'),
-    //redis = require("redis").createClient(6379, '127.0.0.1'),
     app = express(),
     path = require('path'),
     server = require('http').createServer(app),
+    gameService = require('./game');
+    playerService = require('./player');
     io = require('socket.io').listen(server);
 
 app.configure(function () {
@@ -19,138 +20,189 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname + '/public/index.html');
 });
 
-var players, game, player_socket, player_score;
+gameService.gameObj.prototype.emit = function(ev){
+    var params = arguments;
+    params[0] = this.id + '_' + params[0];
+    io.sockets.emit.apply(io.sockets, params);
+}
+
+//var games = [], player_score;
 
 io.sockets.on('connection', function (socket) {
+    var player = null;
+    var game = null;
+    var countdown;
+    var countdownNum;
 
-    socket.on('request_game_info', function( callback ){
-        callback(players, game); //返回玩家信息
-    });
-    socket.on('request_leaderboard', function( callback ){
-        callback(getLeaderboard());
-    });
-    socket.on('join', playerJoin);
-    socket.on('disconnect', playerLeave);
-    socket.on('ready', playerReady);
-    socket.on('unready', playerUnReady);
-
-    socket.on('score', function( player ){
-        try{
-            players[player.id].score = player.score;
-            io.sockets.emit('score', getLeaderboard());
-        }catch(e){
-            error();
-        }
-    });
-    socket.on('completed', playerCompleted);
-});
-
-function getLeaderboard(){
-    var ps = players.slice(0);
-    ps.sort(function(a, b){
-        return a.score+a.time/1000000000 < b.score+a.time/1000000000;
-    });
-    return ps;
-}
-function playerJoin( name, sessionid, setid ){
-    try{
-        var id = players.length;
-        player = { id: id, name: name, score: 0, ready: 0, time:0 };
-        player_socket.push(sessionid);
-        players.push(player);
-        io.sockets.emit('join', players);
-        setid(id);
-    }catch(e){
-        error();
+    function refreshPlayer(){
+        player = game.players[player.id];
     }
-}
-function playerLeave( name ){
-    try{
-            for ( id in player_socket ) {
-                if ( player_socket[id] in io.sockets.manager.closed ) {
-                    if( ! game ){
-                        players.splice(id, 1);
-                        player_socket.splice(id, 1);
-                        io.sockets.emit('leave', players);
-                    }else{
-                        players[id].ready = 4;//逃跑
-                        io.sockets.emit('leave', players);
-                        if(isEnd()){
-                            io.sockets.emit('allcompleted', 'all');
-                            reset();
-                        }
-                    }
+    function refreshGame(){
+        game = playerService.get(game.id);
+    }
+
+    socket.on('join', function(name,sessionid,callback){
+        player = playerService.add( name, sessionid );
+        game = gameService.join( player );
+        player.game_id = game.id;
+
+        //playerService.player_sockets.push(sessionid);
+        //players.push(player);
+        game.emit('join', game.players);
+        callback(player, game);
+
+        socket.on('disconnect', function(){
+            if( game.status == 0 ){
+                playerService.removePlayer(player.id);
+                gameService.removePlayer(game.id, player.id);
+                game.emit('leave', game.players);
+            }else{
+                game.players[player.id].status = game.players[player.id].status>2 ? 6 : 4;
+                game.refresh();
+                game.emit('leave', game.players);
+                if( ! game.isEnd() && isEnd()){
+                    game.end();
+                    game.emit('allcompleted', game.players);
+                    reset();
                 }
             }
-    }catch(e){
-        error();
-    }
-}
-function playerReady( id ){
-    try{
-        players[id].ready = 1;
-        for( var i in players ) {
-            if( ! players[i].ready ){
-                io.sockets.emit('ready', players);
+        });
+
+        //TODO 整理
+        socket.on('request_game_info', function( callback ){
+            callback(game.players, game); //返回玩家信息
+        });
+        socket.on('request_leaderboard', function( callback ){
+            callback(getLeaderboard());
+        });
+
+        socket.on('socketchat', function(name, msg){
+            game.emit('socketchat', player.name, msg);
+        });
+        socket.on('ready', function(){
+            var id = player.id;
+            game.players[id].status = 1;
+            for( var i in game.players ) {
+                if( ! game.players[i].status ){
+                    game.emit('ready', game.players);
+                    return true;
+                }
+            }
+            for( var i in game.players ) {
+                game.players[i].status = 2;
+            }
+            game.start();
+            game.emit('start', game.players);
+        });
+        socket.on('unready', function(){
+            try{
+                game.players[player.id].status = 0;
+                game.refresh();
+                game.emit('unready', game.players);
+            }catch(e){
+                error();
+            }
+        });
+
+        socket.on('score', function(score){
+            try{
+                game.players[player.id].score = score;
+                game.refresh();
+                game.emit('score', getLeaderboard());
+            }catch(e){
+                error();
+            }
+        });
+
+        socket.on('completed', function(){
+            var id = player.id;
+            try{
+                if( game.isPlaying() && game.length > 1 ){
+                    countdown = setInterval(function(){
+                        if( countdownNum > 0 ){
+                            game.emit('countdown', countdownNum--);
+                        }else{
+                            for( var i in game.players ){
+                                if(game.players[i].status < 3){
+                                    game.players[i].status = 5
+                                }
+                            }
+                            game.end();
+                            game.emit('gameover', game.players);
+                            game.emit('allcompleted', game.players);
+                            reset();
+                        }
+                    }, 1000);
+                    game.players[id].first = true;
+                    game.countingdown();
+                }
+                game.players[id].status = 3;
+                game.players[id].time = Math.ceil(((new Date()).getTime() - game.startTime) / 1000);
+                game.refresh();
+                for( var i in game.players ){
+                    if( game.players[i].status < 3 ){
+                        return game.emit('completed', game.players);
+                    }
+                }
+
+                game.emit('completed', game.players);
+                if( ! game.isEnd() && isEnd()){
+                    game.end();
+                    game.emit('score', getLeaderboard());
+                    game.emit('allcompleted', game.players);
+                    reset();
+                }
+
+            }catch(e){
+                error();
+            }
+        });
+
+        function isEnd(){
+            for( var i in game.players ){
+                if( game.players[i].status < 3 ){
+                    return false;
+                }
                 return true;
             }
         }
-        for( var i in players ) {
-            players[i].ready = 2;
+
+        function getLeaderboard(){
+            var ps = [];
+            for( i in game.players ){
+                ps.push(game.players[i]);
+            }
+            ps.sort(function(a, b){
+                return a.score-a.time/1000000000 < b.score-b.time/1000000000;
+            });
+            return ps;
         }
-        game = (new Date()).getTime();
-        io.sockets.emit('start', players);
-    }catch(e){
-        error();
+    });
+
+    function reset(){
+        clearInterval(countdown);
+        countdownNum = 15;
+        countdown = false;
     }
+    reset();
+
+});
+
+//加入游戏
+function playerJoin( name, sessionid, setid ){
+}
+function playerLeave( name ){
+}
+function playerReady( id ){
 }
 function playerUnReady( id ){
-    try{
-        players[id].ready = 0;
-        io.sockets.emit('unready', players);
-    }catch(e){
-        error();
-    }
 }
+
 function playerCompleted( id ){
-    try{
-        players[id].ready = 3;
-        players[id].time = Math.ceil(((new Date()).getTime() - game) / 1000);
-        for( var i in players ){
-            if( players[i].ready < 3 ){
-                return io.sockets.emit('completed', players);
-            }
-        }
-
-        io.sockets.emit('completed', players);
-        if(isEnd()){
-            io.sockets.emit('score', getLeaderboard());
-            io.sockets.emit('allcompleted', 'all');
-            reset();
-        }
-
-    }catch(e){
-        error();
-    }
 }
 
-function isEnd(){
-    for( var i in players ){
-        if( players[i].ready < 3 ){
-            return false;
-        }
-        return true;
-    }
+
+function error( err ){
+    console.log(err);
 }
 
-function reset(){
-    game = false;
-    players = [];
-    player_socket = [];
-    player_score = [];
-}
-function error(){
-    console.log('error');
-}
-
-reset();

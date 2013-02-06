@@ -1,4 +1,5 @@
 var players;
+var game;
 var completeds;
 var my = {
     score: 0
@@ -18,6 +19,7 @@ var options = {
     coin3: [7,8,9,10,11,12]
 }
 
+/*
 $('#coinRate').val('[10,30,60]');
 $('#coinsPerTime').val('4');
 $('#timesPerGate').val('5');
@@ -27,10 +29,12 @@ $('#vy').val('[200,100]');
 $('#coin1').val('[1,2,3]');
 $('#coin2').val('[4,5,6,7]');
 $('#coin3').val('[7,8,9,10,11,12]');
+$('#countdown').val('15');
 
-$('#coinRate, #coinsPerTime, #timesPerGate, #interval, #gravity, #vy, #coin1, #coin2, #coin3').change(function(){
+$('#coinRate, #coinsPerTime, #timesPerGate, #interval, #gravity, #vy, #coin1, #coin2, #coin3, #countdown').change(function(){
     eval('options.'+this.id+'='+this.value);
 });
+*/
 
 var socket = new Socket();
 var randomTimeout;
@@ -46,14 +50,18 @@ function refresh_players( players ){
     for( id in players){
         html = '<div id="player_'+id+'" class="player">';
         html += players[id].name;
-        if( players[id].ready == 1 ){
+        if( players[id].status == 1 ){
             html += ' <span style="color:green">准备</span>';
-        }else if( players[id].ready == 2 ){
+        }else if( players[id].status == 2 ){
             html += ' <span style="color:green">游戏中</span>';
-        }else if( players[id].ready == 3 ){
+        }else if( players[id].status == 3 ){
             html += ' <span style="color:red">已经完成</span>';
-        }else if( players[id].ready == 4 ){
+        }else if( players[id].status == 4 ){
             html += ' <span style="color:#aaa">逃跑</span>';
+        }else if( players[id].status == 5 ){
+            html += ' <span style="color:#aaa">超时</span>';
+        }else if( players[id].status == 6 ){
+            html += ' <span style="color:#aaa">离开</span>';
         }
         html += '</div>';
         $('#room').append(html);
@@ -62,60 +70,88 @@ function refresh_players( players ){
 
 function Socket(){
     this.socket = socket = io.connect('/');
-    this.socket.emit('request_game_info', function( players, game ){
-        refresh_players( players );
-        if( game > 0 ){
-            $('#login').hide();
-            $('#layout').fadeIn()
-            endGame();
-        }
+}
+
+Socket.prototype.joined = function( player, game ){
+    this.socket_prefix = game.id+'_';
+    var _this = this;
+    //监听本房间的，加入、离开、准备、取消准备
+    //this.socket.socket.options.reconnect = false;
+    this.socket.on(this.socket_prefix+'join', refresh_players);
+    this.socket.on(this.socket_prefix+'leave', refresh_players);
+    this.socket.on(this.socket_prefix+'ready', refresh_players);
+    this.socket.on(this.socket_prefix+'unready', refresh_players);
+    this.socket.on(this.socket_prefix+'socketchat', function(name, msg){
+        $('#chatroom').append('<p>'+name+'：'+msg+'</p>');
     });
-
-    this.socket.on('join', refresh_players);
-    this.socket.on('leave', refresh_players);
-    this.socket.on('ready', refresh_players);
-    this.socket.on('unready', refresh_players);
-
-    this.socket.on('countdown', function(i){ console.log(i); });
-    this.socket.on('start', function( players ){
+    refresh_players(game.players);
+    this.socket.once(this.socket_prefix+'start', function( players ){
         refresh_players(players);
         $('#toggle_ready').fadeOut();
         $('canvas').focus();
         Q.clearStages();
+        playBG('/music/background.ogg');
         Q.stageScene("start");
+
+        var fc=true;
+        _this.socket.on(_this.socket_prefix+'countdown', function(i){ 
+            if(fc){
+                options.timesPerGate = 2;
+                playBG('/music/background2.ogg');
+                fc=false;
+            }
+            $('#countdown_timer').text(i).show();
+        });
+        _this.socket.on(_this.socket_prefix+'gameover', function(players){
+            $('#countdown_timer').hide();
+            refresh_players(players);
+            if( ! $('#leaderboard').is(":visible") ){
+                $('#score').fadeOut();
+                clearTimeout(randomTimeout);
+                Q.clearStages();
+                $('#leaderboard').show();
+            }
+        });
+        _this.socket.on(_this.socket_prefix+'completed', refresh_players );
+        _this.socket.on(_this.socket_prefix+'allcompleted', function(players){
+            var ps = [];
+            for( i in players ){
+                ps.push(players[i]);
+            }
+            ps.sort(function(a, b){
+                return a.score-a.time/1000000000 < b.score-b.time/1000000000;
+            });
+            $('#gameover').show();
+            $('#gameover a').click(function(){ location.reload() }).show();
+            refreshLeaderboard(ps);
+        });
     });
-    this.socket.on('completed', refresh_players );
-    this.socket.on('allcompleted', function(){
-        this.socket.disconnect();
-    });
+}
+Socket.prototype.join = function( name ){
+    var the = this;
+    this.socket.emit(
+        'join', 
+        name, 
+        this.socket.socket.sessionid, 
+        function(player, game){
+            the.joined( player, game );
+        });
 }
 
 Socket.prototype.standard = function( event ){
     this.socket.emit(event, this.id);
 }
-Socket.prototype.join = function( name ){
-    var the = this;
-    this.name = name;
-
-    this.socket.emit(
-        'join', 
-        name, 
-        this.socket.socket.sessionid, 
-        function(id){
-            the.id = id;
-    });
-}
 Socket.prototype.on = function( event, callback ){
-    this.socket.on(event, callback);
+    this.socket.on(this.socket_prefix+event, callback);
 }
 Socket.prototype.emit = function( event, callback ){
     this.socket.emit(event, callback);
 }
 Socket.prototype.score = function(){
-    this.socket.emit('score', {
-        id: this.id,
-        score: my.score
-    });
+    this.socket.emit('score', my.score);
+}
+Socket.prototype.chat = function(msg){
+    this.socket.emit('socketchat', this.name, $("<div/>").html(msg).text());
 }
 
 Q.Sprite.extend("Ground",{
@@ -206,9 +242,10 @@ function goal(score, player){
 function backTozero( score, player ){
     my.score = 0;
     $('#score .current').text(my.score);
+    playAU('/music/boom.mp3');
 
     $('#goal')
-        .text('Zero!' + (score ? ' +'+ score : ''))
+        .text(score ? 'Zero! +'+ score : '落地清空')
         .show()
         .delay(100)
         .fadeOut()
@@ -223,6 +260,7 @@ function backTozero( score, player ){
 function endGame(){
     $('#score').fadeOut();
     clearTimeout(randomTimeout);
+    randomTimeout = undefined;
     Q.clearStages();
     $('#leaderboard').show();
     socket.on('score', refreshLeaderboard);
@@ -230,13 +268,71 @@ function endGame(){
 }
 function refreshLeaderboard( players ){
     $('#leaderboard .body li:gt(0)').remove();
+    var rank = 1;
     for ( var i in players ) {
-        var li = $('<li id="rank_player_'+i+'">');
-        li.append($('<span class="rank">').text(parseInt(i)+1));
+        var li = $('<li id="rank_player_'+players[i].id+'">');
+        if( players[i].first ){
+            li.addClass('first');
+        }
+        if( players[i].status == 4 || players[i].status == 5 ){
+            li.addClass('bad');
+            li.addClass('time');
+        }
+        li.append($('<span class="rank">').text(rank++));
         li.append($('<span class="player">').text(players[i].name));
         li.append($('<span class="score">').text(players[i].score));
-        li.append($('<span class="time">').text(players[i].time));
+        if( players[i].status == 4 ) {
+            li.append($('<span class="time">').text('逃跑'));
+        } else if( players[i].status == 5 ) {
+            li.append($('<span class="time">').text('超时'));
+        } else {
+            li.append($('<span class="time">').text(players[i].time));
+        }
         $('#leaderboard .body').append(li);
+    }
+
+    if( game == 'end' ){
+        if( ! $('#leaderboard .time').length ){
+            //无超时，查找最长时间
+            var id = [];
+            var time = -1;
+            for( var i in players ){
+                if( players[i].time > time ){
+                    id = [i];
+                    time = players[i].time;
+                }else if( players[i].time == time ){
+                    id.push(i);
+                }
+            }
+            //时间一样，比分数
+            var score_id = [];
+            var score = 22;
+            for( var i in id ){
+                if( players[id[i]].score < score ){
+                    score_id = [id[i]];
+                    score = players[id[i]].score;
+                }else if( players[id[i]].score == score ){
+                    score_id.push(id[i]);
+                }
+            }
+            for( var i in score_id ){
+                $('#rank_player_'+players[score_id[i]].id).addClass('bad');
+            }
+        } else {
+            var score_id = [];
+            var score = 22;
+            for( var i in players ){
+                if( players[i].score > score ){
+                    score_id = [i];
+                    time = players[i].score;
+                }else if( players[i].score == score ){
+                    score_id.push(i);
+                }
+            }
+            for( var i in score_id ){
+                $('#rank_player_'+score_id[i]).addClass('bad');
+            }
+        }
     }
 }
 
@@ -377,7 +473,7 @@ Q.load("sprites.png, sprites.json", function() {
     Q.compileSheets("sprites.png","sprites.json");
     Q.clearStages();
     Q.stageScene("waitGame");
-    $('canvas').focus();
+    $('#chatinput').focus();
 });
 
 try{
@@ -402,3 +498,26 @@ $('#join').on('click', function(){
     }
     return false;
 });
+$(document).on('keydown', '#chatinput', function(event){
+    if(event.keyCode == 13){
+        socket.chat(this.value);
+        this.value = "";
+    }
+});
+
+
+var bg = document.createElement("audio");
+var au = document.createElement("audio");
+function playBG(afile) {
+    if (bg != null && bg.canPlayType && bg.canPlayType("audio/mpeg")) {
+        bg.src = afile;
+        bg.play();
+    }
+}
+
+function playAU(afile) {
+    if (au != null && au.canPlayType && au.canPlayType("audio/mpeg")) {
+        au.src = afile;
+        au.play();
+    }
+}

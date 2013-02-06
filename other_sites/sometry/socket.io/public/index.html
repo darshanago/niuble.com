@@ -124,11 +124,22 @@
                 margin: 20px auto;
                 display: none;
             }
-            #room{
+            aside{
                 float: left;
                 width: 136px;
+            }
+            #room{
                 border: 1px solid #333;
                 padding: 10px;
+            }
+            #chatroom{
+                border: 1px solid #333;
+                padding: 10px;
+                margin-top: 10px;
+                line-height: 180%;
+            }
+            #chatroom p{
+                margin: 0;
             }
             #container{
                 position: relative;
@@ -222,15 +233,34 @@
             #leaderboard .body li .time{ 
                 width: 40px;
             }
+            #leaderboard .body li.first{
+                color: #13c600;
+            }
             #leaderboard .body li.bad{
                 color: #ec3232;
             }
             #toggle_ready{
                 position: absolute;
-                left: 357px;
-                margin: 0 auto;
                 top: 280px;
+                left: 50%;
+                width: 90px;
+                text-align: center;
+                margin-left: -45px;
                 display: none;
+            }
+            #countdown_timer{
+                position: absolute;
+                width: 80px;
+                height: 40px;
+                top: 25px;
+                left: 50%;
+                font-size: 100px;
+                margin-left: -40px;
+                text-align: center;
+                font-weight: bold;
+                color: rgba(255,255,255,.7);
+                border-radius: 10px;
+                z-index: 9;
             }
         </style>
     </head>
@@ -238,7 +268,7 @@
         <div id="login">
             <div id="login2">
                 <ol>
-                    <li>从前有一群小黑猫准备吃夜宵</li>
+                    <li>从前有一群小黑猫准备吃k宵</li>
                     <li>TA们决定通过游戏来选出请客客的恩公</li>
                     <li></li>
                     <li>用头接金币</li>
@@ -250,6 +280,23 @@
                     <li>超时的或最后接奖杯的是恩公小黑猫</li>
                 </ol>
             </div>
+            <div id="login2">
+                <div style="font-size:14px;margin-left: 44px;">
+                    <p style="font-size:16px;color:#666">
+                        小黑猫和TA的朋友们准备吃夜宵<br>
+                        决定通过游戏来选出请客客的恩公
+                    </p>
+                    <p style="color:red;font-size:18px;font-weight:bold">请仔细阅读游戏规则</p>
+                    <ol style="margin-left: 30px;color:orange">
+                        <li>用头接金币</li>
+                        <li>大中小三种金币与一个大奖杯</li>
+                        <li>超过21或落地时，得分清零</li>
+                        <li>接到奖杯锁定分数，游戏结束</li>
+                        <li>得分最低的是恩公小黑猫</li>
+                        <li>超时的或最后接奖杯的是恩公小黑猫</li>
+                    </ol><p></p>
+                </div>
+            </div>
             <p>
                 请输入小黑猫的名字：</br>
                 <input type="text" id="name" /></br>
@@ -257,8 +304,14 @@
             <p><a href="#!" id="join" class="button">开始游戏</a></p>
         </div>
         <div id="layout">
-            <div id="room">
-            </div>
+            <aside>
+                <div id="room">
+                </div>
+                <p>聊天室</p>
+                <div id="chatroom">
+                </div>
+                <p><input placeHolder="输入发言" type="text" style="width:120px" id="chatinput"/></p>
+            </aside>
             <div id="container">
                 <div id="leaderboard">
                     <ul class="body">
@@ -269,7 +322,12 @@
                             <span class="time">耗时</span>
                         </li>
                     </ul>
+                    <p id="gameover" style="color:white;margin: 20px 0 0 0;text-align: center; line-height:45px;display: none">
+                        游戏结束</br>
+                        <a href="#!" class="button">重新进入游戏</a>
+                    </p>
                 </div>
+                <div id="countdown_timer"></div>
                 <div id="gameLayout">
                     <div id="score">
                         <span class="current">0</span>
@@ -279,7 +337,10 @@
                     <div id="goal"></div>
                     <canvas id='game' width='800' height='600'></canvas>
                 </div>
+                <a href="#!" id="toggle_ready" class="button">Ready</a>
+                <!--
                 <p><a href="#!" id="toggle_ready" class="button">Ready</a></p>
+    <p>        倒计时<input id="countdown"></p>
     <p>        每级金币出现的概率：[10,30,60]共100<input id="coinRate"></p>
     <p>        每次掉落金币的上限<input id="coinsPerTime"></p>
     <p>        掉几次金币掉一次奖杯<input id="timesPerGate"></p>
@@ -288,7 +349,7 @@
     <p>        初速度随机区间：[200,100]<input id="vy"></p>
     <p>        小金币<input id="coin1"></p>
     <p>        中金币<input id="coin2"></p>
-    <p>        大金币<input id="coin3"></p>
+    <p>        大金币<input id="coin3"></p>-->
             </div>
             <br style="clear: both;" />
         </div>
