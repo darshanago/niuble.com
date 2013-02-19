@@ -5,7 +5,8 @@
         <li id="user_generator">
             <input type="input" name="chinese" id="chinese" placeHolder="中文名"/>
             <input type="input" name="english" id="english" placeHolder="英文名"/>
-            <input type="input" name="password" id="password" placeHolder="手机号"/>
+            <input type="input" name="mobile" id="mobile" placeHolder="手机号"/>
+            <input type="input" name="department" id="department" placeHolder="部门"/>
             <a class="checkbox checked" id="noon">午</a>
             <a class="checkbox checked" id="dinner">晚</a>
             <a class="checkbox" id="employee_generate">加上去</a>
@@ -13,11 +14,13 @@
     </ul>
     <ul class="displayNone">
         <li id="employeeNode">
-            <span class="chinese"><%=chinese%></span>
-            <span class="english"><%=english%></span>
-            <span class="password"><%=password%></span>
-            <a class="checkbox<%=options.noon?' checked':''%> noon">午</a>
-            <a class="checkbox<%=options.dinner?' checked':''%> dinner">晚</a>
+            <span class="chinese"><%=chinese %></span>
+            <span class="english"><%=english %></span>
+            <span class="mobile"><%=mobile %></span>
+            <span class="department"><%=department %></span>
+            <a class="checkbox<%=options.noon?' checked':'' %> noon">午</a>
+            <a class="checkbox<%=options.dinner?' checked':'' %> dinner">晚</a>
+            <a class="checkbox remove">删除</a>
         </li>
     </ul>
 {% endblock %}
